@@ -3,7 +3,7 @@
 - 更新日期：2026-11-04
 - 目标：任何电脑通过公网网址访问，无需安装 Python 或项目依赖
 - 费用目标：优先使用免费额度
-- 当前状态：代码已准备，等待用户登录 GitHub 与 Streamlit
+- 当前状态：已部署并通过公网主流程验收
 
 ## 1. 为什么不用临时 SSH 隧道
 
@@ -116,4 +116,25 @@ APP_ENFORCE_USAGE_LIMITS = "true"
 - 当前等待用户本人在浏览器中登录 GitHub。
 - 登录后还需创建远端仓库、推送代码、授权 Streamlit Cloud，并在云端填写
   DeepSeek 密钥和访问口令。
+
+### 2026-11-04 21:00 部署完成
+
+- GitHub 仓库：`taoliang25/cs2-ai-review`，为支持免费 Cloud 部署已设为公开。
+- Streamlit Cloud 应用：`cs2-tactical-review-taoliang25.streamlit.app`。
+- 云端运行 Python 3.13.18，全部依赖安装成功。
+- 公网页面加载和访问口令验证成功。
+- 内置 `public_sample.dem` 解析成功，能够读取 10 名玩家。
+- DeepSeek 云端报告真实生成成功，页面显示
+  `openai-compatible / deepseek-chat`。
+- 已修复 DeepSeek 响应格式兼容问题并加入自动重试。
+- 自动化测试由 16 项增加到 18 项，全部通过。
+
+安全待办：
+
+- 部署过程中内部表单回显了 DeepSeek 密钥和访问口令，应将旧密钥和口令视为
+  已暴露。
+- 待用户在 DeepSeek 控制台撤销旧 API Key 并创建新 Key 后，需要同时更新
+  Streamlit Secrets 和本地 `.env`。
+- 更换访问口令后，需要同时更新 Streamlit Secrets 和本地 `.env`。
+- 完成轮换前不要将公网地址和访问口令发送给朋友。
 

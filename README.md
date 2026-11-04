@@ -6,6 +6,8 @@
 
 ## 当前进展
 
+- 已部署到 Streamlit Community Cloud：
+  <https://cs2-tactical-review-taoliang25.streamlit.app>
 - 仅在 Python 3.13 下验证。
 - Awpy 3.1.1 作为主解析器。
 - demoparser2 0.42.1 用于交叉校验。
@@ -62,6 +64,8 @@ D:\python.exe -m venv .venv
 ```
 
 然后在浏览器打开 `http://localhost:8501`。
+
+公网版本需要通过项目维护者提供的访问口令进入。
 
 临时公网演示：
 
