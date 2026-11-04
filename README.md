@@ -1,6 +1,9 @@
 # 基于对局事件的《CS2》战术识别与赛后智能复盘系统
 
-> 项目恢复入口：[项目总档案](docs/00_PROJECT_MASTER_RECORD.md)
+> 项目恢复口令：**可以开始工作了**
+>
+> 项目恢复入口：[每日工作日志](docs/DAILY_WORK_LOG.md)
+> ｜ [项目总档案](docs/00_PROJECT_MASTER_RECORD.md)
 > ｜ [上下文交接与恢复说明](docs/PROJECT_CONTEXT_HANDOFF.md)
 
 本科毕业设计项目。当前已跑通单场 Demo 解析、事实指标、规则模式识别、DeepSeek 真实复盘、证据校验和网页主流程，并支持 Markdown、Word、PDF 导出；尚未开始战术识别准确率实验。
@@ -22,6 +25,7 @@
 
 ## 文档
 
+- [每日工作日志与交接](docs/DAILY_WORK_LOG.md)
 - [项目总档案与灾难恢复说明](docs/00_PROJECT_MASTER_RECORD.md)
 - [需求基线](docs/01_requirements_baseline.md)
 - [Demo 验证方案](docs/02_demo_validation_plan.md)
