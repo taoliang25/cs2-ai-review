@@ -128,6 +128,7 @@ APP_ENFORCE_USAGE_LIMITS = "true"
   `openai-compatible / deepseek-chat`。
 - 已修复 DeepSeek 响应格式兼容问题并加入自动重试。
 - 自动化测试由 16 项增加到 18 项，全部通过。
+- 后续 UI 与地图点位改造完成后，自动化测试增加到 22 项并全部通过。
 
 安全待办：
 

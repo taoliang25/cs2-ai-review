@@ -1015,12 +1015,13 @@ def _parse_or_reuse(
     return database_path
 
 
-def _render_upload() -> Path | None:
-    _render_section_intro(
-        "STEP 01 · IMPORT",
-        "导入一场对局",
-        "上传 .dem 文件，系统会建立临时事实库；原始文件在解析完成后立即删除。",
-    )
+def _render_upload_form(*, compact: bool = False) -> Path | None:
+    if not compact:
+        _render_section_intro(
+            "STEP 01 · IMPORT",
+            "导入一场对局",
+            "上传 .dem 文件，系统会建立临时事实库；原始文件在解析完成后立即删除。",
+        )
     with st.container(border=True):
         uploaded = st.file_uploader(
             "选择 CS2 常规 5v5 Demo",
@@ -1111,6 +1112,14 @@ def _render_upload() -> Path | None:
             if st.button("载入已缓存的测试 Demo"):
                 return _parse_or_reuse(selected_demo, temporary=False)
     return None
+
+
+def _render_upload() -> Path | None:
+    if st.session_state.get("database_path"):
+        with st.expander("更换 Demo / 重新分析", expanded=False):
+            return _render_upload_form(compact=True)
+        return None
+    return _render_upload_form()
 
 
 def _load_event_rows(
@@ -1241,11 +1250,6 @@ def _render_analysis(database_path: Path) -> None:
             st.session_state.pop("authenticated", None)
             st.rerun()
 
-    _render_section_intro(
-        "STEP 02 · PLAYER",
-        "选择主要分析玩家",
-        "从真实玩家列表中选择一人，后续画像、回合和证据都只围绕该玩家。",
-    )
     labels = {
         (
             f"{player.name}｜{_side_label(player.starting_side)}"
@@ -1253,13 +1257,45 @@ def _render_analysis(database_path: Path) -> None:
         ): player
         for player in players
     }
-    with st.container(border=True):
-        selected_label = st.selectbox("点击选择玩家", list(labels))
-        selected: PlayerOption = labels[selected_label]
-        generate_clicked = st.button(
-            "生成 AI 画像与复盘",
-            type="primary",
+    if st.session_state.get("facts"):
+        current_steamid = st.session_state["facts"]["player"]["steamid"]
+        default_label = next(
+            (
+                label
+                for label, option in labels.items()
+                if option.steamid == current_steamid
+            ),
+            next(iter(labels)),
         )
+        with st.expander("更换主要分析玩家", expanded=False):
+            selected_label = st.selectbox(
+                "点击选择玩家",
+                list(labels),
+                index=list(labels).index(default_label),
+                key="player_selector_existing",
+            )
+            selected: PlayerOption = labels[selected_label]
+            generate_clicked = st.button(
+                "重新生成 AI 画像与复盘",
+                type="primary",
+            )
+    else:
+        _render_section_intro(
+            "STEP 02 · PLAYER",
+            "选择主要分析玩家",
+            "从真实玩家列表中选择一人，后续画像、回合和证据都只围绕该玩家。",
+        )
+        with st.container(border=True):
+            selected_label = st.selectbox(
+                "点击选择玩家",
+                list(labels),
+                key="player_selector_initial",
+            )
+            selected: PlayerOption = labels[selected_label]
+            generate_clicked = st.button(
+                "生成 AI 画像与复盘",
+                type="primary",
+            )
 
     if generate_clicked:
         with st.spinner("正在计算真实事件指标、关键回合和报告……"):
@@ -1292,6 +1328,7 @@ def _render_analysis(database_path: Path) -> None:
             st.session_state["report"] = report
             st.session_state["report_warning"] = report_warning
             st.session_state["selected_steamid"] = selected.steamid
+        st.rerun()
 
     facts = st.session_state.get("facts")
     if not facts:
@@ -1305,6 +1342,11 @@ def _render_analysis(database_path: Path) -> None:
     metrics = {item["key"]: item for item in facts["metrics"]}
     report = st.session_state["report"]
 
+    _render_section_intro(
+        "STEP 03 · REVIEW",
+        "AI 复盘已生成",
+        "先看教练摘要和关键影响，再深入地图、回合和证据。",
+    )
     _render_player_hero(player, match)
 
     tabs = st.tabs(

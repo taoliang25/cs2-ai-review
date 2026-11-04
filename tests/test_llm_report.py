@@ -152,6 +152,19 @@ class LLMReportTest(unittest.TestCase):
         self.assertNotIn('"x"', serialized)
         self.assertEqual(llm_bundle["player"]["display_name"], "目标玩家")
 
+    def test_llm_bundle_uses_local_map_callouts(self) -> None:
+        bundle = _bundle()
+        bundle["match"]["map_name"] = "de_dust2"
+        bundle["rounds"][0]["first_exit_place"] = "OutsideTunnel"
+        bundle["rounds"][0]["early_route"] = [
+            "OutsideTunnel",
+            "UpperTunnel",
+            "BombsiteA",
+        ]
+        llm_bundle = build_llm_fact_bundle(bundle)
+        route = llm_bundle["rounds"][0]["early_route"]
+        self.assertEqual(route, ["B洞外", "B洞", "A包"])
+
     def test_valid_structured_report(self) -> None:
         llm_bundle = build_llm_fact_bundle(_bundle())
         result = validate_llm_payload(_payload(), llm_bundle)
