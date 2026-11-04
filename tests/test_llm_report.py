@@ -11,6 +11,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from cs2_review.llm_report import (
     REQUIRED_SECTIONS,
+    OpenAICompatibleHTTPClient,
     OpenAICompatibleReportProvider,
     build_llm_fact_bundle,
     validate_llm_payload,
@@ -125,6 +126,22 @@ class FakeClient:
         return copy.deepcopy(self.payload)
 
 
+class StubHTTPClient(OpenAICompatibleHTTPClient):
+    def __init__(self, payloads: list[dict]) -> None:
+        super().__init__(
+            base_url="https://example.invalid/v1",
+            api_key="test-key",
+            model="test-model",
+            json_mode=True,
+        )
+        self.payloads = payloads
+        self.request_bodies: list[dict] = []
+
+    def _post_completion(self, request_body: dict) -> dict:
+        self.request_bodies.append(copy.deepcopy(request_body))
+        return self.payloads.pop(0)
+
+
 class LLMReportTest(unittest.TestCase):
     def test_sanitized_bundle_removes_identity_and_coordinates(self) -> None:
         bundle = _bundle()
@@ -165,6 +182,50 @@ class LLMReportTest(unittest.TestCase):
         self.assertIn("证据", report.markdown)
         self.assertNotIn("76561190000000000", client.user_prompt)
         self.assertNotIn("测试玩家", client.user_prompt)
+
+    def test_http_client_retries_without_json_mode(self) -> None:
+        invalid_payload = {
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "message": {"content": "not-json"},
+                }
+            ]
+        }
+        valid_payload = {
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "message": {"content": '{"ok": true}'},
+                }
+            ]
+        }
+        client = StubHTTPClient([invalid_payload, valid_payload])
+        result = client.complete_json(
+            system_prompt="system",
+            user_prompt="user",
+        )
+        self.assertEqual(result, {"ok": True})
+        self.assertEqual(len(client.request_bodies), 2)
+        self.assertIn("response_format", client.request_bodies[0])
+        self.assertNotIn("response_format", client.request_bodies[1])
+
+    def test_http_client_accepts_text_content_parts(self) -> None:
+        client = StubHTTPClient([])
+        payload = {
+            "choices": [
+                {
+                    "finish_reason": "stop",
+                    "message": {
+                        "content": [
+                            {"type": "text", "text": '{"ok":'},
+                            {"type": "text", "text": " true}"},
+                        ]
+                    },
+                }
+            ]
+        }
+        self.assertEqual(client._decode_completion(payload), {"ok": True})
 
 
 if __name__ == "__main__":

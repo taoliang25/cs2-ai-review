@@ -86,23 +86,10 @@ class OpenAICompatibleHTTPClient:
         self.json_mode = json_mode
         self.max_tokens = max_tokens
 
-    def complete_json(
+    def _post_completion(
         self,
-        *,
-        system_prompt: str,
-        user_prompt: str,
+        request_body: dict[str, Any],
     ) -> dict[str, Any]:
-        request_body: dict[str, Any] = {
-            "model": self.model,
-            "temperature": 0.2,
-            "max_tokens": self.max_tokens,
-            "messages": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-        }
-        if self.json_mode:
-            request_body["response_format"] = {"type": "json_object"}
         endpoint = (
             self.base_url
             if self.base_url.endswith("/chat/completions")
@@ -122,7 +109,7 @@ class OpenAICompatibleHTTPClient:
             with urllib.request.urlopen(
                 request, timeout=self.timeout_seconds
             ) as response:
-                payload = json.loads(response.read().decode("utf-8"))
+                return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
             message = exc.read(1000).decode("utf-8", errors="replace")
             raise LLMReportError(
@@ -133,16 +120,82 @@ class OpenAICompatibleHTTPClient:
         except json.JSONDecodeError as exc:
             raise LLMReportError("大模型接口返回内容不是合法 JSON") from exc
 
+    @staticmethod
+    def _extract_content(payload: dict[str, Any]) -> tuple[str, str, int]:
         try:
-            content = payload["choices"][0]["message"]["content"]
-            if not isinstance(content, str):
-                raise TypeError("message.content is not text")
+            choice = payload["choices"][0]
+            message = choice["message"]
+        except (KeyError, IndexError, TypeError) as exc:
+            raise LLMReportError(
+                "大模型响应缺少 choices[0].message"
+            ) from exc
+
+        finish_reason = str(choice.get("finish_reason") or "unknown")
+        content = message.get("content")
+        if isinstance(content, list):
+            content = "".join(
+                str(part.get("text", ""))
+                for part in content
+                if isinstance(part, dict)
+            )
+        if not isinstance(content, str) or not content.strip():
+            reasoning = message.get("reasoning_content")
+            if isinstance(reasoning, str) and reasoning.strip():
+                content = reasoning
+        if not isinstance(content, str) or not content.strip():
+            raise LLMReportError(
+                "大模型返回了空文本"
+                f"（finish_reason={finish_reason}）"
+            )
+        return content, finish_reason, len(content)
+
+    def _decode_completion(self, payload: dict[str, Any]) -> dict[str, Any]:
+        content, finish_reason, content_length = self._extract_content(payload)
+        try:
             decoded = json.loads(_strip_code_fence(content))
-        except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
-            raise LLMReportError("无法从大模型响应中读取 JSON 报告") from exc
+        except json.JSONDecodeError as exc:
+            raise LLMReportError(
+                "大模型文本不是合法 JSON"
+                f"（finish_reason={finish_reason}, "
+                f"content_length={content_length}）"
+            ) from exc
         if not isinstance(decoded, dict):
             raise LLMReportError("大模型报告顶层必须是 JSON 对象")
         return decoded
+
+    def complete_json(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+    ) -> dict[str, Any]:
+        request_body: dict[str, Any] = {
+            "model": self.model,
+            "temperature": 0.2,
+            "max_tokens": self.max_tokens,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+        }
+        if self.json_mode:
+            request_body["response_format"] = {"type": "json_object"}
+        payload = self._post_completion(request_body)
+        try:
+            return self._decode_completion(payload)
+        except LLMReportError as first_error:
+            if not self.json_mode:
+                raise
+            fallback_body = dict(request_body)
+            fallback_body.pop("response_format", None)
+            try:
+                fallback_payload = self._post_completion(fallback_body)
+                return self._decode_completion(fallback_payload)
+            except LLMReportError as second_error:
+                raise LLMReportError(
+                    f"{first_error}; 关闭 JSON 模式后重试仍失败："
+                    f"{second_error}"
+                ) from second_error
 
 
 def _sanitize_text(text: str) -> str:
