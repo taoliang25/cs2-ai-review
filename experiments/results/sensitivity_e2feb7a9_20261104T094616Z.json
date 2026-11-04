@@ -1,0 +1,1758 @@
+{
+  "run_id": "20261104T094616Z",
+  "database": "e2feb7a9ea5a.sqlite",
+  "analysis_id": "e2feb7a9ea5a2b28386f041e9b9eca9bab842372c2b44b1a792db196b1de0990",
+  "map_name": "de_anubis",
+  "player_count": 10,
+  "parameters": {
+    "near_distance_thresholds": [
+      300,
+      400,
+      500,
+      600,
+      700,
+      800
+    ],
+    "far_distance_thresholds": [
+      600,
+      700,
+      800,
+      900,
+      1000,
+      1200
+    ],
+    "early_windows_seconds": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ]
+  },
+  "players": [
+    {
+      "player_label": "P01",
+      "distance_sample_count": 2713,
+      "distance_median": 136.90251655263214
+    },
+    {
+      "player_label": "P02",
+      "distance_sample_count": 2665,
+      "distance_median": 191.36410228282654
+    },
+    {
+      "player_label": "P03",
+      "distance_sample_count": 2914,
+      "distance_median": 239.3391466171912
+    },
+    {
+      "player_label": "P04",
+      "distance_sample_count": 2981,
+      "distance_median": 240.71871540694116
+    },
+    {
+      "player_label": "P05",
+      "distance_sample_count": 2840,
+      "distance_median": 242.15350015647988
+    },
+    {
+      "player_label": "P06",
+      "distance_sample_count": 2911,
+      "distance_median": 205.1340003733872
+    },
+    {
+      "player_label": "P07",
+      "distance_sample_count": 2793,
+      "distance_median": 168.6805036988595
+    },
+    {
+      "player_label": "P08",
+      "distance_sample_count": 2821,
+      "distance_median": 190.00508330040506
+    },
+    {
+      "player_label": "P09",
+      "distance_sample_count": 2835,
+      "distance_median": 155.41250007736429
+    },
+    {
+      "player_label": "P10",
+      "distance_sample_count": 2983,
+      "distance_median": 211.95684648397952
+    }
+  ],
+  "distance_aggregate": {
+    "near": [
+      {
+        "threshold": 300,
+        "player_mean_ratio": 0.5803732828698933,
+        "player_ratio_min": 0.5306338028169014,
+        "player_ratio_max": 0.636331569664903
+      },
+      {
+        "threshold": 400,
+        "player_mean_ratio": 0.643956609368318,
+        "player_ratio_min": 0.5661971830985916,
+        "player_ratio_max": 0.7174603174603175
+      },
+      {
+        "threshold": 500,
+        "player_mean_ratio": 0.7021698617894581,
+        "player_ratio_min": 0.6052816901408451,
+        "player_ratio_max": 0.7724867724867724
+      },
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.7506026627081581,
+        "player_ratio_min": 0.6503521126760563,
+        "player_ratio_max": 0.8278659611992946
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.8054881317627263,
+        "player_ratio_min": 0.6873239436619718,
+        "player_ratio_max": 0.8673055657943236
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.8501358766258723,
+        "player_ratio_min": 0.7323943661971831,
+        "player_ratio_max": 0.9067453004054552
+      }
+    ],
+    "far": [
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.24939733729184183,
+        "player_ratio_min": 0.17213403880070546,
+        "player_ratio_max": 0.34964788732394364
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.19451186823727373,
+        "player_ratio_min": 0.13269443420567636,
+        "player_ratio_max": 0.3126760563380282
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.1498641233741277,
+        "player_ratio_min": 0.09325469959454478,
+        "player_ratio_max": 0.2676056338028169
+      },
+      {
+        "threshold": 900,
+        "player_mean_ratio": 0.11856978328462042,
+        "player_ratio_min": 0.0586067084408404,
+        "player_ratio_max": 0.225
+      },
+      {
+        "threshold": 1000,
+        "player_mean_ratio": 0.09316863113211422,
+        "player_ratio_min": 0.041651308514559525,
+        "player_ratio_max": 0.19612676056338027
+      },
+      {
+        "threshold": 1200,
+        "player_mean_ratio": 0.056698574217063834,
+        "player_ratio_min": 0.02248433468485072,
+        "player_ratio_max": 0.11866197183098591
+      }
+    ]
+  },
+  "early_window_aggregate": [
+    {
+      "window_seconds": 5,
+      "player_mean_consistency": 0.66876318032934,
+      "player_consistency_min": 0.5217391304347826,
+      "player_consistency_max": 0.8
+    },
+    {
+      "window_seconds": 10,
+      "player_mean_consistency": 0.5043478260869565,
+      "player_consistency_min": 0.5,
+      "player_consistency_max": 0.5217391304347826
+    },
+    {
+      "window_seconds": 15,
+      "player_mean_consistency": 0.5,
+      "player_consistency_min": 0.5,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 20,
+      "player_mean_consistency": 0.5,
+      "player_consistency_min": 0.5,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 25,
+      "player_mean_consistency": 0.5,
+      "player_consistency_min": 0.5,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 30,
+      "player_mean_consistency": 0.5,
+      "player_consistency_min": 0.5,
+      "player_consistency_max": 0.5
+    }
+  ],
+  "details": {
+    "distance": [
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.6325101363803907,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6922226317729451,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7596756358274972,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.8131220051603391,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.8673055657943236,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.9067453004054552,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.1868779948396609,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.13269443420567636,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.09325469959454478,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.0586067084408404,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.041651308514559525,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.02248433468485072,
+        "sample_count": 2713
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5782363977485929,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6416510318949343,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.70093808630394,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7579737335834896,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.8210131332082552,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8660412757973733,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.24202626641651032,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.17898686679174483,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.13395872420262664,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.10469043151969981,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.0799249530956848,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.055159474671669796,
+        "sample_count": 2665
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5624571036376115,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6297185998627316,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.682566918325326,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7244337680164722,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7745367192862045,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.820178448867536,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2755662319835278,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.22546328071379548,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.17982155113246398,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.14207275223061083,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.11564859299931365,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.053534660260809885,
+        "sample_count": 2914
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5484736665548474,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.615229788661523,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6715867158671587,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.725259979872526,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7997316336799731,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8507212344850721,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.274740020127474,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.20026836632002684,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.14927876551492789,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.10935927541093593,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.08487084870848709,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.056692385105669235,
+        "sample_count": 2981
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5306338028169014,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5661971830985916,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6052816901408451,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6503521126760563,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6873239436619718,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7323943661971831,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.34964788732394364,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.3126760563380282,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2676056338028169,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.225,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.19612676056338027,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.11866197183098591,
+        "sample_count": 2840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5912057712126417,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6691858467880454,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7296461697011336,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.777052559257987,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.8337341119890073,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8828581243558914,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.22294744074201306,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.1662658880109928,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.11714187564410855,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.08622466506355204,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.056338028169014086,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.025420817588457576,
+        "sample_count": 2911
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.585750089509488,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6301467955603294,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.677765843179377,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7178660938059435,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7694235588972431,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8080916577157179,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2821339061940566,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.23057644110275688,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.19190834228428214,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.1636233440744719,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.1310418904403867,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.08736126029359112,
+        "sample_count": 2793
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5682382133995038,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6391350584898972,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7103863878057426,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7444168734491315,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7979439914923786,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8422545196738745,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2555831265508685,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2020560085076214,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.15774548032612548,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.12903225806451613,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.09819213045019497,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.06061680255228642,
+        "sample_count": 2821
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.636331569664903,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.7174603174603175,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7724867724867724,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.8278659611992946,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.8624338624338624,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8970017636684303,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.17213403880070546,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.13756613756613756,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.10299823633156967,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.08395061728395062,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.06419753086419754,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.045149911816578486,
+        "sample_count": 2835
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5698960777740529,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6386188400938653,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7113643982567884,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7676835400603419,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.8414347971840429,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8950720750921891,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.23231645993965805,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.1585652028159571,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.10492792490781093,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.08313778075762655,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.06369426751592357,
+        "sample_count": 2983
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.04190412336573919,
+        "sample_count": 2983
+      }
+    ],
+    "early_window": [
+      {
+        "player_label": "P01",
+        "window_seconds": 5,
+        "rounds_with_route": 18,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.6666666666666666,
+        "distribution": {
+          "Street": 4,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 2,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 5,
+        "rounds_with_route": 17,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.7058823529411765,
+        "distribution": {
+          "Street": 1,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 8,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 8,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 8,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 8,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 8,
+          "Ruins": 4,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 5,
+        "rounds_with_route": 20,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.6,
+        "distribution": {
+          "Street": 2,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 6,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 6,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 6,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 6,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 6,
+          "Ruins": 6,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 5,
+        "rounds_with_route": 23,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5217391304347826,
+        "distribution": {
+          "Ruins": 11,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Ruins": 11,
+          "Street": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Ruins": 11,
+          "Street": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Ruins": 11,
+          "Street": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Ruins": 11,
+          "Street": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Ruins": 11,
+          "Street": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 5,
+        "rounds_with_route": 17,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.7058823529411765,
+        "distribution": {
+          "Street": 4,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 10,
+        "rounds_with_route": 23,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5217391304347826,
+        "distribution": {
+          "Street": 10,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 11,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 11,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 11,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Street": 11,
+          "Ruins": 1,
+          "CTSideUpper": 12
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 5,
+        "rounds_with_route": 19,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.631578947368421,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 7
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 5,
+        "rounds_with_route": 15,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.8,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 3
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 11,
+          "Ruins": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 11,
+          "Ruins": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 11,
+          "Ruins": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 11,
+          "Ruins": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 11,
+          "Ruins": 1
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 5,
+        "rounds_with_route": 20,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.6,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 8
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 10,
+        "rounds_with_route": 23,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5217391304347826,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 9,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 10,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 10,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 10,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 10,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 5,
+        "rounds_with_route": 17,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.7058823529411765,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 5
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 12
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 12
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 12
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 12
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Street": 12
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 5,
+        "rounds_with_route": 16,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.75,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 2,
+          "Street": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 4,
+          "Street": 8
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 4,
+          "Street": 8
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 4,
+          "Street": 8
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 4,
+          "Street": 8
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "CTSideUpper",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "CTSideUpper": 12,
+          "Ruins": 4,
+          "Street": 8
+        }
+      }
+    ]
+  },
+  "notice": "敏感性实验描述阈值变化如何影响本场规则结果，不等于分类准确率或参数最优性证明。"
+}

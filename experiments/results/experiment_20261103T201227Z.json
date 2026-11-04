@@ -1,0 +1,2413 @@
+{
+  "run_id": "20261103T201227Z",
+  "generated_at": "2026-11-03T20:12:30.216425+00:00",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "awpy": "3.1.1",
+    "demoparser2": "0.42.1"
+  },
+  "demo_count": 1,
+  "demos": [
+    {
+      "demo_index": 1,
+      "source_filename": "research_demoparser_test_demo.dem",
+      "parse_seconds": 2.2944,
+      "analysis_id": "84a1a4191302bdd2a3bbb5a727842093744b1fb1a228aeec630369e44b622cb2",
+      "demo_sha256": "84a1a4191302bdd2a3bbb5a727842093744b1fb1a228aeec630369e44b622cb2",
+      "map_name": "de_mirage",
+      "player_count": 10,
+      "round_count": 10,
+      "tick_sample_count": 6536,
+      "place_name_count": 23,
+      "economy_record_count": 20,
+      "event_counts": {
+        "damage": 264,
+        "defuse": 1,
+        "drop": 14,
+        "finish_plant": 7,
+        "fire": 25,
+        "flash_blind": 63,
+        "item_drop": 149,
+        "item_pickup": 73,
+        "item_purchase": 229,
+        "kill": 73,
+        "pickup": 21,
+        "shot": 1590,
+        "smoke": 38,
+        "start_plant": 9
+      },
+      "checks": [
+        {
+          "name": "sqlite_integrity",
+          "status": "pass",
+          "detail": "ok"
+        },
+        {
+          "name": "foreign_keys",
+          "status": "pass",
+          "detail": "无外键错误"
+        },
+        {
+          "name": "regular_5v5_player_count",
+          "status": "pass",
+          "detail": "有效玩家 10 名"
+        },
+        {
+          "name": "two_teams",
+          "status": "pass",
+          "detail": "{'counter-terrorist': 5, 'terrorist': 5}"
+        },
+        {
+          "name": "rounds_present",
+          "status": "pass",
+          "detail": "回合数 10"
+        },
+        {
+          "name": "position_samples",
+          "status": "pass",
+          "detail": "位置采样 6536 行，空坐标 0 行"
+        },
+        {
+          "name": "place_names",
+          "status": "pass",
+          "detail": "地图地点 23 个"
+        },
+        {
+          "name": "team_economy",
+          "status": "pass",
+          "detail": "经济记录 20，期望 20"
+        },
+        {
+          "name": "core_events",
+          "status": "pass",
+          "detail": "关键事件类型 ['damage', 'defuse', 'drop', 'finish_plant', 'fire', 'flash_blind', 'item_drop', 'item_pickup', 'item_purchase', 'kill', 'pickup', 'shot', 'smoke', 'start_plant']"
+        }
+      ],
+      "players": [
+        {
+          "player_label": "P01",
+          "starting_side": "counter-terrorist",
+          "analysis_seconds": 0.0634,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 299,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SnipersNest",
+            "dominant_first_exit_rate": 0.625,
+            "dominant_zone": "A",
+            "dominant_zone_rate": 0.875,
+            "pattern_counts": {
+              "early_place_SnipersNest": 5,
+              "early_zone_A": 7,
+              "far_teammate": 2,
+              "mixed_teammate_distance": 2,
+              "near_teammate": 6,
+              "opening_contact": 1,
+              "observable_utility": 3,
+              "early_place_Jungle": 1,
+              "support_nearby_no_response": 2,
+              "early_place_Shop": 1,
+              "early_zone_B": 1,
+              "early_place_BombsiteA": 1,
+              "last_alive": 1
+            },
+            "route_distribution": {
+              "SnipersNest": 5,
+              "Jungle": 1,
+              "Shop": 1,
+              "BombsiteA": 1
+            },
+            "zone_distribution": {
+              "A": 7,
+              "B": 1
+            }
+          },
+          "key_rounds": {
+            "excellent": 5,
+            "problem": 1,
+            "high_impact": 5,
+            "clutches": 1
+          }
+        },
+        {
+          "player_label": "P02",
+          "starting_side": "counter-terrorist",
+          "analysis_seconds": 0.0645,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 329,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "Shop",
+            "dominant_first_exit_rate": 0.7777777777777778,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 0.7777777777777778,
+            "pattern_counts": {
+              "early_place_Shop": 7,
+              "early_zone_B": 7,
+              "near_teammate": 7,
+              "route_B_to_A": 3,
+              "far_teammate": 3,
+              "opening_death": 2,
+              "early_place_BombsiteA": 2,
+              "early_zone_A": 2,
+              "support_nearby_no_response": 2,
+              "last_alive": 2,
+              "observable_utility": 1
+            },
+            "route_distribution": {
+              "Shop": 7,
+              "BombsiteA": 2
+            },
+            "zone_distribution": {
+              "B": 7,
+              "A": 2
+            }
+          },
+          "key_rounds": {
+            "excellent": 5,
+            "problem": 3,
+            "high_impact": 3,
+            "clutches": 2
+          }
+        },
+        {
+          "player_label": "P03",
+          "starting_side": "counter-terrorist",
+          "analysis_seconds": 0.0598,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 166,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "Shop",
+            "dominant_first_exit_rate": 0.625,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 0.625,
+            "pattern_counts": {
+              "early_place_Shop": 5,
+              "early_zone_B": 5,
+              "near_teammate": 8,
+              "far_teammate": 1,
+              "observable_utility": 1,
+              "opening_death": 3,
+              "route_B_to_A": 1,
+              "early_place_SnipersNest": 1,
+              "early_zone_A": 3,
+              "early_place_BombsiteA": 2,
+              "mixed_teammate_distance": 1
+            },
+            "route_distribution": {
+              "Shop": 5,
+              "SnipersNest": 1,
+              "BombsiteA": 2
+            },
+            "zone_distribution": {
+              "B": 5,
+              "A": 3
+            }
+          },
+          "key_rounds": {
+            "excellent": 2,
+            "problem": 4,
+            "high_impact": 4,
+            "clutches": 0
+          }
+        },
+        {
+          "player_label": "P04",
+          "starting_side": "counter-terrorist",
+          "analysis_seconds": 0.0617,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 194,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "BombsiteA",
+            "dominant_first_exit_rate": 1.0,
+            "dominant_zone": "A",
+            "dominant_zone_rate": 1.0,
+            "pattern_counts": {
+              "near_teammate": 8,
+              "opening_death": 2,
+              "far_teammate": 2,
+              "last_alive": 4,
+              "early_place_BombsiteA": 5,
+              "early_zone_A": 5,
+              "route_A_to_MID": 1,
+              "opening_contact": 1,
+              "observable_utility": 2
+            },
+            "route_distribution": {
+              "BombsiteA": 5
+            },
+            "zone_distribution": {
+              "A": 5
+            }
+          },
+          "key_rounds": {
+            "excellent": 6,
+            "problem": 1,
+            "high_impact": 1,
+            "clutches": 4
+          }
+        },
+        {
+          "player_label": "P05",
+          "starting_side": "counter-terrorist",
+          "analysis_seconds": 0.0603,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 237,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "BombsiteA",
+            "dominant_first_exit_rate": 0.7777777777777778,
+            "dominant_zone": "A",
+            "dominant_zone_rate": 1.0,
+            "pattern_counts": {
+              "early_place_BombsiteA": 7,
+              "early_zone_A": 9,
+              "far_teammate": 1,
+              "last_alive": 1,
+              "near_teammate": 6,
+              "opening_kill": 1,
+              "support_nearby_no_response": 3,
+              "observable_utility": 3,
+              "mixed_teammate_distance": 2,
+              "route_A_to_MID": 1,
+              "opening_contact": 1,
+              "early_place_SnipersNest": 2,
+              "route_A_to_B": 1,
+              "opening_death": 1
+            },
+            "route_distribution": {
+              "BombsiteA": 7,
+              "SnipersNest": 2
+            },
+            "zone_distribution": {
+              "A": 9
+            }
+          },
+          "key_rounds": {
+            "excellent": 2,
+            "problem": 7,
+            "high_impact": 2,
+            "clutches": 1
+          }
+        },
+        {
+          "player_label": "P06",
+          "starting_side": "terrorist",
+          "analysis_seconds": 0.0704,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 459,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SideAlley",
+            "dominant_first_exit_rate": 0.8888888888888888,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 0.8888888888888888,
+            "pattern_counts": {
+              "early_place_SideAlley": 8,
+              "early_zone_B": 8,
+              "route_B_to_MID": 7,
+              "near_teammate": 6,
+              "mixed_teammate_distance": 1,
+              "last_alive": 2,
+              "far_teammate": 3,
+              "observable_utility": 7,
+              "opening_contact": 1,
+              "support_nearby_no_response": 1,
+              "early_place_PalaceInterior": 1,
+              "early_zone_A": 1,
+              "opening_kill": 1
+            },
+            "route_distribution": {
+              "SideAlley": 8,
+              "PalaceInterior": 1
+            },
+            "zone_distribution": {
+              "B": 8,
+              "A": 1
+            }
+          },
+          "key_rounds": {
+            "excellent": 8,
+            "problem": 2,
+            "high_impact": 8,
+            "clutches": 2
+          }
+        },
+        {
+          "player_label": "P07",
+          "starting_side": "terrorist",
+          "analysis_seconds": 0.0616,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 289,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SideAlley",
+            "dominant_first_exit_rate": 0.7777777777777778,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 0.7777777777777778,
+            "pattern_counts": {
+              "early_place_SideAlley": 7,
+              "early_zone_B": 7,
+              "near_teammate": 6,
+              "observable_utility": 5,
+              "route_B_to_MID": 1,
+              "mixed_teammate_distance": 3,
+              "early_place_PalaceInterior": 2,
+              "early_zone_A": 2,
+              "far_teammate": 1,
+              "opening_contact": 1,
+              "support_nearby_no_response": 3
+            },
+            "route_distribution": {
+              "SideAlley": 7,
+              "PalaceInterior": 2
+            },
+            "zone_distribution": {
+              "B": 7,
+              "A": 2
+            }
+          },
+          "key_rounds": {
+            "excellent": 1,
+            "problem": 2,
+            "high_impact": 1,
+            "clutches": 0
+          }
+        },
+        {
+          "player_label": "P08",
+          "starting_side": "terrorist",
+          "analysis_seconds": 0.0638,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 344,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SideAlley",
+            "dominant_first_exit_rate": 1.0,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 1.0,
+            "pattern_counts": {
+              "early_place_SideAlley": 9,
+              "early_zone_B": 9,
+              "near_teammate": 9,
+              "support_nearby_no_response": 1,
+              "mixed_teammate_distance": 1,
+              "opening_kill": 5,
+              "observable_utility": 6,
+              "route_B_to_MID": 1
+            },
+            "route_distribution": {
+              "SideAlley": 9
+            },
+            "zone_distribution": {
+              "B": 9
+            }
+          },
+          "key_rounds": {
+            "excellent": 6,
+            "problem": 1,
+            "high_impact": 6,
+            "clutches": 0
+          }
+        },
+        {
+          "player_label": "P09",
+          "starting_side": "terrorist",
+          "analysis_seconds": 0.0621,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 315,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SideAlley",
+            "dominant_first_exit_rate": 1.0,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 1.0,
+            "pattern_counts": {
+              "early_place_SideAlley": 9,
+              "early_zone_B": 9,
+              "route_B_to_MID": 8,
+              "near_teammate": 9,
+              "support_nearby_no_response": 1,
+              "opening_death": 1,
+              "observable_utility": 4,
+              "support_response": 1,
+              "mixed_teammate_distance": 1
+            },
+            "route_distribution": {
+              "SideAlley": 9
+            },
+            "zone_distribution": {
+              "B": 9
+            }
+          },
+          "key_rounds": {
+            "excellent": 8,
+            "problem": 2,
+            "high_impact": 2,
+            "clutches": 0
+          }
+        },
+        {
+          "player_label": "P10",
+          "starting_side": "terrorist",
+          "analysis_seconds": 0.064,
+          "metric_count": 19,
+          "round_count": 10,
+          "evidence_count": 261,
+          "tactical_pattern_rule_version": "tactical-rules-v0.1",
+          "tactical_pattern_summary": {
+            "dominant_first_exit": "SideAlley",
+            "dominant_first_exit_rate": 0.5555555555555556,
+            "dominant_zone": "B",
+            "dominant_zone_rate": 0.5555555555555556,
+            "pattern_counts": {
+              "early_place_SideAlley": 5,
+              "early_zone_B": 5,
+              "near_teammate": 6,
+              "opening_kill": 2,
+              "support_nearby_no_response": 1,
+              "early_place_PalaceAlley": 4,
+              "early_zone_A": 4,
+              "route_A_to_MID": 4,
+              "far_teammate": 3,
+              "opening_contact": 2,
+              "observable_utility": 5,
+              "route_B_to_MID": 2,
+              "support_response": 1,
+              "mixed_teammate_distance": 1
+            },
+            "route_distribution": {
+              "SideAlley": 5,
+              "PalaceAlley": 4
+            },
+            "zone_distribution": {
+              "B": 5,
+              "A": 4
+            }
+          },
+          "key_rounds": {
+            "excellent": 7,
+            "problem": 5,
+            "high_impact": 7,
+            "clutches": 0
+          }
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "player_label": "P01",
+      "metric_key": "kills",
+      "value": 8,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "deaths",
+      "value": 8,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "assists",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "opening_contact_rate",
+      "value": 0.1,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "opening_deaths",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 553.9270705923901,
+      "unit": "世界坐标单位",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.47943037974683544,
+      "unit": "比例",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.375,
+      "unit": "比例",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "support_nearby_rate",
+      "value": 0.2222222222222222,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 2,
+      "confidence": 0.4,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "top_places",
+      "value": "BombsiteA,BombsiteB,SnipersNest,Shop,PalaceInterior",
+      "unit": null,
+      "sample_size": 190,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "first_exit_places",
+      "value": "SnipersNest | SnipersNest | SnipersNest | SnipersNest | Jungle | Shop | SnipersNest | BombsiteA | BombsiteA",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": 0.35402298850574715,
+      "unit": "比例",
+      "sample_size": 435,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "clutch_rounds",
+      "value": 1,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "utility_effect_rounds",
+      "value": 3,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 3, \"smokegrenade\": 5, \"hegrenade\": 4, \"molotov\": 0, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 20,
+      "confidence": null,
+      "evidence_count": 20,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P01",
+      "metric_key": "utility_effects",
+      "value": "{\"utility_damage\": 2, \"flash_blind\": 2}",
+      "unit": null,
+      "sample_size": 4,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "kills",
+      "value": 6,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "deaths",
+      "value": 7,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 7,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "assists",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "opening_contact_rate",
+      "value": 0.1,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "opening_deaths",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 420.0841398759442,
+      "unit": "世界坐标单位",
+      "sample_size": 544,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.5330882352941176,
+      "unit": "比例",
+      "sample_size": 544,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.35110294117647056,
+      "unit": "比例",
+      "sample_size": 544,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "support_nearby_rate",
+      "value": 0.25,
+      "unit": "比例",
+      "sample_size": 8,
+      "confidence": 1.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 2,
+      "confidence": 0.4,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "top_places",
+      "value": "BombsiteB,BombsiteA,Catwalk,Underpass,Apartments",
+      "unit": null,
+      "sample_size": 325,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "first_exit_places",
+      "value": "Shop | Shop | Shop | BombsiteA | Shop | Shop | Shop | BombsiteA | Shop",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": 0.3614457831325301,
+      "unit": "比例",
+      "sample_size": 415,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "clutch_rounds",
+      "value": 2,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "utility_effect_rounds",
+      "value": 1,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 4, \"smokegrenade\": 4, \"hegrenade\": 2, \"molotov\": 0, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 16,
+      "confidence": null,
+      "evidence_count": 16,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P02",
+      "metric_key": "utility_effects",
+      "value": "{\"utility_damage\": 1}",
+      "unit": null,
+      "sample_size": 1,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "kills",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "deaths",
+      "value": 9,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "assists",
+      "value": 3,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "opening_contact_rate",
+      "value": 0.1,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "opening_deaths",
+      "value": 3,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 180.7490300369603,
+      "unit": "世界坐标单位",
+      "sample_size": 480,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.6145833333333334,
+      "unit": "比例",
+      "sample_size": 480,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.3,
+      "unit": "比例",
+      "sample_size": 480,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "support_nearby_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 8,
+      "confidence": 1.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "support_response_rate",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "top_places",
+      "value": "BombsiteB,Apartments,Shop,BombsiteA,Jungle",
+      "unit": null,
+      "sample_size": 199,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "first_exit_places",
+      "value": "Shop | Shop | Shop | Shop | Shop | SnipersNest | BombsiteA | BombsiteA | Jungle",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": 0.24702380952380953,
+      "unit": "比例",
+      "sample_size": 336,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "clutch_rounds",
+      "value": 0,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "utility_effect_rounds",
+      "value": 1,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 2, \"smokegrenade\": 1, \"hegrenade\": 1, \"molotov\": 0, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 12,
+      "confidence": null,
+      "evidence_count": 12,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P03",
+      "metric_key": "utility_effects",
+      "value": "{\"utility_damage\": 1}",
+      "unit": null,
+      "sample_size": 1,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "kills",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "deaths",
+      "value": 7,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 7,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "assists",
+      "value": 3,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "opening_contact_rate",
+      "value": 0.3,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "opening_deaths",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 497.8428187568224,
+      "unit": "世界坐标单位",
+      "sample_size": 534,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.50187265917603,
+      "unit": "比例",
+      "sample_size": 534,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.40636704119850187,
+      "unit": "比例",
+      "sample_size": 534,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "support_nearby_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 8,
+      "confidence": 1.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "support_response_rate",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "top_places",
+      "value": "PalaceInterior,BombsiteA,PalaceAlley,Stairs,BackAlley",
+      "unit": null,
+      "sample_size": 222,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "first_exit_places",
+      "value": "BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA",
+      "unit": null,
+      "sample_size": 6,
+      "confidence": null,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": 0.3725,
+      "unit": "比例",
+      "sample_size": 400,
+      "confidence": 1.0,
+      "evidence_count": 6,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "clutch_rounds",
+      "value": 4,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "utility_effect_rounds",
+      "value": 2,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 13,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 2, \"smokegrenade\": 3, \"hegrenade\": 3, \"molotov\": 0, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 14,
+      "confidence": null,
+      "evidence_count": 14,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P04",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 5, \"utility_damage\": 8}",
+      "unit": null,
+      "sample_size": 13,
+      "confidence": null,
+      "evidence_count": 13,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "kills",
+      "value": 4,
+      "unit": "次",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "deaths",
+      "value": 9,
+      "unit": "次",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "assists",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "opening_contact_rate",
+      "value": 0.3333333333333333,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 0.9,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "opening_kills",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "opening_deaths",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 487.07943205499623,
+      "unit": "世界坐标单位",
+      "sample_size": 566,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.5141342756183745,
+      "unit": "比例",
+      "sample_size": 566,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.36395759717314485,
+      "unit": "比例",
+      "sample_size": 566,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "support_nearby_rate",
+      "value": 0.375,
+      "unit": "比例",
+      "sample_size": 8,
+      "confidence": 1.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 3,
+      "confidence": 0.6,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "top_places",
+      "value": "BombsiteA,PalaceInterior,Connector,Jungle,Shop",
+      "unit": null,
+      "sample_size": 305,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "first_exit_places",
+      "value": "BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | SnipersNest | BombsiteA | SnipersNest",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": 0.33153638814016173,
+      "unit": "比例",
+      "sample_size": 371,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "clutch_rounds",
+      "value": 1,
+      "unit": "回合",
+      "sample_size": 9,
+      "confidence": 0.9,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "utility_effect_rounds",
+      "value": 3,
+      "unit": "回合",
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 5, \"smokegrenade\": 4, \"hegrenade\": 0, \"molotov\": 0, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 20,
+      "confidence": null,
+      "evidence_count": 20,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P05",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 9}",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "kills",
+      "value": 11,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 11,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "deaths",
+      "value": 4,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "assists",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "opening_contact_rate",
+      "value": 0.2,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "opening_kills",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "opening_deaths",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 346.1380066812902,
+      "unit": "世界坐标单位",
+      "sample_size": 720,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.5527777777777778,
+      "unit": "比例",
+      "sample_size": 720,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.3263888888888889,
+      "unit": "比例",
+      "sample_size": 720,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "support_nearby_rate",
+      "value": 0.1111111111111111,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 1,
+      "confidence": 0.2,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "top_places",
+      "value": "TopofMid,Middle,Catwalk,PalaceInterior,SideAlley",
+      "unit": null,
+      "sample_size": 484,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "first_exit_places",
+      "value": "SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | PalaceInterior | SideAlley",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": 0.34355828220858897,
+      "unit": "比例",
+      "sample_size": 489,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "clutch_rounds",
+      "value": 2,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "utility_effect_rounds",
+      "value": 7,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 32,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 9, \"smokegrenade\": 5, \"hegrenade\": 2, \"molotov\": 6, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 27,
+      "confidence": null,
+      "evidence_count": 27,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P06",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 18, \"utility_damage\": 14}",
+      "unit": null,
+      "sample_size": 32,
+      "confidence": null,
+      "evidence_count": 32,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "kills",
+      "value": 4,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "deaths",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "assists",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "opening_contact_rate",
+      "value": 0.1,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "opening_deaths",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 348.6251775681649,
+      "unit": "世界坐标单位",
+      "sample_size": 757,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.5587846763540291,
+      "unit": "比例",
+      "sample_size": 757,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.24834874504623514,
+      "unit": "比例",
+      "sample_size": 757,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "support_nearby_rate",
+      "value": 0.3333333333333333,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 3,
+      "confidence": 0.6,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "top_places",
+      "value": "BackAlley,TopofMid,BombsiteA,PalaceInterior,Middle",
+      "unit": null,
+      "sample_size": 472,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "first_exit_places",
+      "value": "SideAlley | SideAlley | SideAlley | PalaceInterior | PalaceInterior | SideAlley | SideAlley | SideAlley | SideAlley",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": 0.25285171102661597,
+      "unit": "比例",
+      "sample_size": 526,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "clutch_rounds",
+      "value": 0,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "utility_effect_rounds",
+      "value": 5,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 21,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 9, \"smokegrenade\": 7, \"hegrenade\": 8, \"molotov\": 6, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 38,
+      "confidence": null,
+      "evidence_count": 38,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P07",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 11, \"utility_damage\": 10}",
+      "unit": null,
+      "sample_size": 21,
+      "confidence": null,
+      "evidence_count": 21,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "kills",
+      "value": 9,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "deaths",
+      "value": 4,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "assists",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "opening_contact_rate",
+      "value": 0.2,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "opening_kills",
+      "value": 5,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "opening_deaths",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 212.64721671402057,
+      "unit": "世界坐标单位",
+      "sample_size": 693,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.7243867243867244,
+      "unit": "比例",
+      "sample_size": 693,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.12698412698412698,
+      "unit": "比例",
+      "sample_size": 693,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "support_nearby_rate",
+      "value": 0.1111111111111111,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "support_response_rate",
+      "value": 0.0,
+      "unit": "比例",
+      "sample_size": 1,
+      "confidence": 0.2,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "top_places",
+      "value": "Underpass,Middle,BombsiteB,House,BackAlley",
+      "unit": null,
+      "sample_size": 467,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "first_exit_places",
+      "value": "SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": 0.11026615969581749,
+      "unit": "比例",
+      "sample_size": 526,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "clutch_rounds",
+      "value": 0,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "utility_effect_rounds",
+      "value": 6,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 13,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 8, \"smokegrenade\": 7, \"hegrenade\": 7, \"molotov\": 7, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 34,
+      "confidence": null,
+      "evidence_count": 34,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P08",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 6, \"utility_damage\": 7}",
+      "unit": null,
+      "sample_size": 13,
+      "confidence": null,
+      "evidence_count": 13,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "kills",
+      "value": 5,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 5,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "deaths",
+      "value": 7,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 7,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "assists",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 2,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "opening_contact_rate",
+      "value": 0.1,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "opening_kills",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "opening_deaths",
+      "value": 1,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 1,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 192.8914584630769,
+      "unit": "世界坐标单位",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.7278481012658228,
+      "unit": "比例",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.13291139240506328,
+      "unit": "比例",
+      "sample_size": 632,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "support_nearby_rate",
+      "value": 0.25,
+      "unit": "比例",
+      "sample_size": 8,
+      "confidence": 1.0,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "support_response_rate",
+      "value": 0.5,
+      "unit": "比例",
+      "sample_size": 2,
+      "confidence": 0.4,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "top_places",
+      "value": "Middle,TopofMid,BombsiteA,SideAlley,Stairs",
+      "unit": null,
+      "sample_size": 419,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "first_exit_places",
+      "value": "SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": 0.13272311212814644,
+      "unit": "比例",
+      "sample_size": 437,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "clutch_rounds",
+      "value": 0,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "utility_effect_rounds",
+      "value": 4,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 4, \"smokegrenade\": 4, \"hegrenade\": 6, \"molotov\": 5, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 26,
+      "confidence": null,
+      "evidence_count": 26,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P09",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 6, \"utility_damage\": 2}",
+      "unit": null,
+      "sample_size": 8,
+      "confidence": null,
+      "evidence_count": 8,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "kills",
+      "value": 11,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 11,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "deaths",
+      "value": 5,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 5,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "assists",
+      "value": 4,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 4,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "opening_contact_rate",
+      "value": 0.3,
+      "unit": "比例",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "opening_kills",
+      "value": 2,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "opening_deaths",
+      "value": 0,
+      "unit": "次",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 3,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "nearest_teammate_distance_median",
+      "value": 266.2591005229915,
+      "unit": "世界坐标单位",
+      "sample_size": 673,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "near_teammate_ratio",
+      "value": 0.6062407132243685,
+      "unit": "比例",
+      "sample_size": 673,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "far_teammate_ratio",
+      "value": 0.27191679049034173,
+      "unit": "比例",
+      "sample_size": 673,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "support_nearby_rate",
+      "value": 0.2222222222222222,
+      "unit": "比例",
+      "sample_size": 9,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "support_response_rate",
+      "value": 0.5,
+      "unit": "比例",
+      "sample_size": 2,
+      "confidence": 0.4,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "top_places",
+      "value": "BombsiteA,PalaceInterior,BombsiteB,TRamp,Middle",
+      "unit": null,
+      "sample_size": 422,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "first_exit_places",
+      "value": "SideAlley | PalaceAlley | PalaceAlley | SideAlley | PalaceAlley | SideAlley | SideAlley | SideAlley | PalaceAlley",
+      "unit": null,
+      "sample_size": 9,
+      "confidence": null,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "advantage_far_teammate_ratio",
+      "value": 0.22286821705426357,
+      "unit": "比例",
+      "sample_size": 516,
+      "confidence": 1.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "disadvantage_far_teammate_ratio",
+      "value": null,
+      "unit": "比例",
+      "sample_size": 0,
+      "confidence": 0.0,
+      "evidence_count": 9,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "clutch_rounds",
+      "value": 0,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": 1.0,
+      "evidence_count": 0,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "utility_effect_rounds",
+      "value": 5,
+      "unit": "回合",
+      "sample_size": 10,
+      "confidence": null,
+      "evidence_count": 14,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "utility_purchases",
+      "value": "{\"flashbang\": 4, \"smokegrenade\": 7, \"hegrenade\": 4, \"molotov\": 2, \"incgrenade\": 0}",
+      "unit": null,
+      "sample_size": 22,
+      "confidence": null,
+      "evidence_count": 22,
+      "demo_index": 1
+    },
+    {
+      "player_label": "P10",
+      "metric_key": "utility_effects",
+      "value": "{\"flash_blind\": 6, \"utility_damage\": 8}",
+      "unit": null,
+      "sample_size": 14,
+      "confidence": null,
+      "evidence_count": 14,
+      "demo_index": 1
+    }
+  ],
+  "notice": "这是解析与数据质量实验结果，不是战术识别准确率。玩家名称和 Steam ID 已从实验输出中移除。"
+}

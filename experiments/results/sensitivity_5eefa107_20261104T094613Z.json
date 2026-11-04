@@ -1,0 +1,1878 @@
+{
+  "run_id": "20261104T094613Z",
+  "database": "5eefa107b659.sqlite",
+  "analysis_id": "5eefa107b659e1e737c243138e64cf00376582c5296eb7ee2f1f00149703f756",
+  "map_name": "de_dust2",
+  "player_count": 10,
+  "parameters": {
+    "near_distance_thresholds": [
+      300,
+      400,
+      500,
+      600,
+      700,
+      800
+    ],
+    "far_distance_thresholds": [
+      600,
+      700,
+      800,
+      900,
+      1000,
+      1200
+    ],
+    "early_windows_seconds": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ]
+  },
+  "players": [
+    {
+      "player_label": "P01",
+      "distance_sample_count": 4015,
+      "distance_median": 336.1279330416243
+    },
+    {
+      "player_label": "P02",
+      "distance_sample_count": 4032,
+      "distance_median": 357.15724013101976
+    },
+    {
+      "player_label": "P03",
+      "distance_sample_count": 3807,
+      "distance_median": 417.48134720848867
+    },
+    {
+      "player_label": "P04",
+      "distance_sample_count": 3734,
+      "distance_median": 270.346749257082
+    },
+    {
+      "player_label": "P05",
+      "distance_sample_count": 3956,
+      "distance_median": 321.8103530104983
+    },
+    {
+      "player_label": "P06",
+      "distance_sample_count": 3840,
+      "distance_median": 351.5305783710901
+    },
+    {
+      "player_label": "P07",
+      "distance_sample_count": 3930,
+      "distance_median": 361.0443221269589
+    },
+    {
+      "player_label": "P08",
+      "distance_sample_count": 3832,
+      "distance_median": 376.9924365389809
+    },
+    {
+      "player_label": "P09",
+      "distance_sample_count": 3626,
+      "distance_median": 319.01824953555246
+    },
+    {
+      "player_label": "P10",
+      "distance_sample_count": 4224,
+      "distance_median": 376.2700799653645
+    }
+  ],
+  "distance_aggregate": {
+    "near": [
+      {
+        "threshold": 300,
+        "player_mean_ratio": 0.47018643274504757,
+        "player_ratio_min": 0.43367480956133436,
+        "player_ratio_max": 0.534279592929834
+      },
+      {
+        "threshold": 400,
+        "player_mean_ratio": 0.5375887713605771,
+        "player_ratio_min": 0.49146309429997376,
+        "player_ratio_max": 0.611140867702196
+      },
+      {
+        "threshold": 500,
+        "player_mean_ratio": 0.5920622609487275,
+        "player_ratio_min": 0.5408458103493564,
+        "player_ratio_max": 0.6612212104981253
+      },
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.6484464039757161,
+        "player_ratio_min": 0.5818229577094826,
+        "player_ratio_max": 0.7281735404392072
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.6983932032190852,
+        "player_ratio_min": 0.6309429997373259,
+        "player_ratio_max": 0.7852169255490091
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.7450269472435121,
+        "player_ratio_min": 0.6769109535066982,
+        "player_ratio_max": 0.8427959292983396
+      }
+    ],
+    "far": [
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.35155359602428393,
+        "player_ratio_min": 0.2718264595607927,
+        "player_ratio_max": 0.41817704229051744
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.30160679678091484,
+        "player_ratio_min": 0.2147830744509909,
+        "player_ratio_max": 0.369057000262674
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.2549730527564878,
+        "player_ratio_min": 0.15720407070166043,
+        "player_ratio_max": 0.32308904649330183
+      },
+      {
+        "threshold": 900,
+        "player_mean_ratio": 0.21571942156809107,
+        "player_ratio_min": 0.1272094268880557,
+        "player_ratio_max": 0.2776464407670081
+      },
+      {
+        "threshold": 1000,
+        "player_mean_ratio": 0.17774528683550003,
+        "player_ratio_min": 0.09105516871987145,
+        "player_ratio_max": 0.23850801155765694
+      },
+      {
+        "threshold": 1200,
+        "player_mean_ratio": 0.1147200908548996,
+        "player_ratio_min": 0.03427959292983396,
+        "player_ratio_max": 0.18597320724980299
+      }
+    ]
+  },
+  "early_window_aggregate": [
+    {
+      "window_seconds": 5,
+      "player_mean_consistency": 0.5352825560146194,
+      "player_consistency_min": 0.4,
+      "player_consistency_max": 0.75
+    },
+    {
+      "window_seconds": 10,
+      "player_mean_consistency": 0.4514538718713292,
+      "player_consistency_min": 0.3333333333333333,
+      "player_consistency_max": 0.5806451612903226
+    },
+    {
+      "window_seconds": 15,
+      "player_mean_consistency": 0.4398412698412698,
+      "player_consistency_min": 0.3333333333333333,
+      "player_consistency_max": 0.5142857142857142
+    },
+    {
+      "window_seconds": 20,
+      "player_mean_consistency": 0.44007936507936507,
+      "player_consistency_min": 0.3333333333333333,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 25,
+      "player_mean_consistency": 0.44007936507936507,
+      "player_consistency_min": 0.3333333333333333,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 30,
+      "player_mean_consistency": 0.4388888888888889,
+      "player_consistency_min": 0.3333333333333333,
+      "player_consistency_max": 0.5
+    }
+  ],
+  "details": {
+    "distance": [
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.47546699875466997,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5397260273972603,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.591282689912827,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6592777085927771,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7066002490660025,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7514321295143213,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.34072229140722293,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2933997509339975,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.24856787048567872,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.2136986301369863,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.18729763387297635,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.13922789539227895,
+        "sample_count": 4015
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.451140873015873,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5233134920634921,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.5778769841269841,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6336805555555556,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6810515873015873,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7371031746031746,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3663194444444444,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.3189484126984127,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2628968253968254,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.21850198412698413,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.17336309523809523,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.09375,
+        "sample_count": 4032
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.43367480956133436,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.49146309429997376,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.5408458103493564,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.5818229577094826,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6309429997373259,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.6769109535066982,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.41817704229051744,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.369057000262674,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.32308904649330183,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.2776464407670081,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.23850801155765694,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.18597320724980299,
+        "sample_count": 3807
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.534279592929834,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.611140867702196,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6612212104981253,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7281735404392072,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7852169255490091,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8427959292983396,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2718264595607927,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2147830744509909,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.15720407070166043,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.1272094268880557,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.09105516871987145,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.03427959292983396,
+        "sample_count": 3734
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.4845803842264914,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5561172901921132,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6185540950455005,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6771991911021233,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7295247724974722,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7682002022244692,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.32280080889787666,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2704752275025278,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.23179979777553084,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.18225480283114256,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.14787664307381193,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.08948432760364004,
+        "sample_count": 3956
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.47317708333333336,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.53203125,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.5859375,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6359375,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6856770833333333,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7213541666666666,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3640625,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.3143229166666667,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2786458333333333,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.24401041666666667,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.19609375,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.13854166666666667,
+        "sample_count": 3840
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.4633587786259542,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.543765903307888,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.593384223918575,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6559796437659033,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7173027989821883,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.766412213740458,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3440203562340967,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2826972010178117,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.233587786259542,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.19567430025445293,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.1529262086513995,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.0743002544529262,
+        "sample_count": 3930
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.4595511482254697,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5086116910229646,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.5709812108559499,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6296972860125261,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6805845511482255,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7199895615866388,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3703027139874739,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.31941544885177453,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.28001043841336115,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.24556367432150314,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.20850730688935282,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.1296972860125261,
+        "sample_count": 3832
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.48345284059569776,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5543298400441258,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6163816878102593,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6674020959735245,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7095973524544953,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7603419746276889,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.33259790402647543,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2904026475455047,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2396580253723111,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.1955322669608384,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.15857694429123,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.11114175399889685,
+        "sample_count": 3626
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.4431818181818182,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5153882575757576,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.564157196969697,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6152935606060606,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6574337121212122,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7057291666666666,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3847064393939394,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.3425662878787879,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2942708333333333,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.2571022727272727,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.22324810606060605,
+        "sample_count": 4224
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.15080492424242425,
+        "sample_count": 4224
+      }
+    ],
+    "early_window": [
+      {
+        "player_label": "P01",
+        "window_seconds": 5,
+        "rounds_with_route": 24,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.625,
+        "distribution": {
+          "OutsideTunnel": 7,
+          "TopofMid": 1,
+          "UnderA": 15,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 10,
+        "rounds_with_route": 35,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.45714285714285713,
+        "distribution": {
+          "OutsideTunnel": 15,
+          "TopofMid": 2,
+          "UnderA": 16,
+          "MidDoors": 1,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "OutsideTunnel": 15,
+          "TopofMid": 2,
+          "UnderA": 16,
+          "MidDoors": 2,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "OutsideTunnel": 15,
+          "TopofMid": 2,
+          "UnderA": 16,
+          "MidDoors": 2,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "OutsideTunnel": 15,
+          "TopofMid": 2,
+          "UnderA": 16,
+          "MidDoors": 2,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "OutsideTunnel": 15,
+          "TopofMid": 2,
+          "UnderA": 16,
+          "MidDoors": 2,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 5,
+        "rounds_with_route": 24,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.75,
+        "distribution": {
+          "TopofMid": 4,
+          "OutsideTunnel": 1,
+          "MidDoors": 18,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 10,
+        "rounds_with_route": 31,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5806451612903226,
+        "distribution": {
+          "OutsideLong": 8,
+          "TopofMid": 4,
+          "OutsideTunnel": 1,
+          "MidDoors": 18
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 15,
+        "rounds_with_route": 35,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5142857142857142,
+        "distribution": {
+          "OutsideLong": 10,
+          "TopofMid": 4,
+          "OutsideTunnel": 3,
+          "MidDoors": 18
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "OutsideLong": 10,
+          "TopofMid": 4,
+          "OutsideTunnel": 4,
+          "MidDoors": 18
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "OutsideLong": 10,
+          "TopofMid": 4,
+          "OutsideTunnel": 4,
+          "MidDoors": 18
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "OutsideLong": 10,
+          "TopofMid": 4,
+          "OutsideTunnel": 4,
+          "MidDoors": 18
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 5,
+        "rounds_with_route": 32,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.53125,
+        "distribution": {
+          "TopofMid": 13,
+          "OutsideTunnel": 1,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 10,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 14,
+          "OutsideTunnel": 2,
+          "OutsideLong": 2,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 14,
+          "OutsideTunnel": 2,
+          "OutsideLong": 2,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 14,
+          "OutsideTunnel": 2,
+          "OutsideLong": 2,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 14,
+          "OutsideTunnel": 2,
+          "OutsideLong": 2,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 14,
+          "OutsideTunnel": 2,
+          "OutsideLong": 2,
+          "UnderA": 17,
+          "MidDoors": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 5,
+        "rounds_with_route": 29,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.5862068965517241,
+        "distribution": {
+          "TopofMid": 4,
+          "OutsideLong": 1,
+          "OutsideTunnel": 6,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 10,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 5,
+          "OutsideLong": 1,
+          "OutsideTunnel": 12,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 5,
+          "OutsideLong": 1,
+          "OutsideTunnel": 12,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 5,
+          "OutsideLong": 1,
+          "OutsideTunnel": 12,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 5,
+          "OutsideLong": 1,
+          "OutsideTunnel": 12,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "TopofMid": 5,
+          "OutsideLong": 1,
+          "OutsideTunnel": 12,
+          "MidDoors": 17,
+          "UnderA": 1
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 5,
+        "rounds_with_route": 31,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4838709677419355,
+        "distribution": {
+          "OutsideLong": 2,
+          "TopofMid": 9,
+          "OutsideTunnel": 2,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 10,
+        "rounds_with_route": 34,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4411764705882353,
+        "distribution": {
+          "OutsideLong": 3,
+          "TopofMid": 10,
+          "OutsideTunnel": 3,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 15,
+        "rounds_with_route": 35,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.42857142857142855,
+        "distribution": {
+          "OutsideLong": 3,
+          "TopofMid": 11,
+          "OutsideTunnel": 3,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 20,
+        "rounds_with_route": 35,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.42857142857142855,
+        "distribution": {
+          "OutsideLong": 3,
+          "TopofMid": 11,
+          "OutsideTunnel": 3,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 25,
+        "rounds_with_route": 35,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.42857142857142855,
+        "distribution": {
+          "OutsideLong": 3,
+          "TopofMid": 11,
+          "OutsideTunnel": 3,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "OutsideLong": 3,
+          "TopofMid": 12,
+          "OutsideTunnel": 3,
+          "UnderA": 15,
+          "MidDoors": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 5,
+        "rounds_with_route": 30,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.5333333333333333,
+        "distribution": {
+          "MidDoors": 1,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 4
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 10,
+        "rounds_with_route": 35,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.45714285714285713,
+        "distribution": {
+          "MidDoors": 2,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 8
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "MidDoors": 2,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 9
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "MidDoors": 2,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 9
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "MidDoors": 2,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 9
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4444444444444444,
+        "distribution": {
+          "MidDoors": 2,
+          "UnderA": 16,
+          "OutsideTunnel": 1,
+          "TopofMid": 8,
+          "OutsideLong": 9
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 5,
+        "rounds_with_route": 31,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.41935483870967744,
+        "distribution": {
+          "MidDoors": 13,
+          "UnderA": 3,
+          "OutsideTunnel": 8,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 10,
+        "rounds_with_route": 34,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4117647058823529,
+        "distribution": {
+          "MidDoors": 14,
+          "UnderA": 3,
+          "OutsideTunnel": 10,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 15,
+        "rounds_with_route": 35,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4,
+        "distribution": {
+          "MidDoors": 14,
+          "UnderA": 3,
+          "OutsideTunnel": 10,
+          "OutsideLong": 1,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 15,
+          "UnderA": 3,
+          "OutsideTunnel": 10,
+          "OutsideLong": 1,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 15,
+          "UnderA": 3,
+          "OutsideTunnel": 10,
+          "OutsideLong": 1,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 15,
+          "UnderA": 3,
+          "OutsideTunnel": 10,
+          "OutsideLong": 1,
+          "TopofMid": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 5,
+        "rounds_with_route": 30,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.4,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideLong": 6,
+          "TopofMid": 5,
+          "OutsideTunnel": 1
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 10,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.3333333333333333,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideTunnel": 4,
+          "OutsideLong": 9,
+          "TopofMid": 5
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.3333333333333333,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideTunnel": 4,
+          "OutsideLong": 9,
+          "TopofMid": 5
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.3333333333333333,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideTunnel": 4,
+          "OutsideLong": 9,
+          "TopofMid": 5
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.3333333333333333,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideTunnel": 4,
+          "OutsideLong": 9,
+          "TopofMid": 5
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "UnderA",
+        "dominant_consistency": 0.3333333333333333,
+        "distribution": {
+          "MidDoors": 6,
+          "UnderA": 12,
+          "OutsideTunnel": 4,
+          "OutsideLong": 9,
+          "TopofMid": 5
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 5,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 10,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "TopofMid",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "MidDoors": 9,
+          "UnderA": 9,
+          "OutsideTunnel": 2,
+          "TopofMid": 15,
+          "OutsideLong": 1
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 5,
+        "rounds_with_route": 28,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.6071428571428571,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 4,
+          "TopofMid": 2,
+          "OutsideLong": 4
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 10,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 11,
+          "OutsideLong": 5,
+          "TopofMid": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 15,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 11,
+          "OutsideLong": 5,
+          "TopofMid": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 20,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 11,
+          "OutsideLong": 5,
+          "TopofMid": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 25,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 11,
+          "OutsideLong": 5,
+          "TopofMid": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 30,
+        "rounds_with_route": 36,
+        "dominant_first_place": "MidDoors",
+        "dominant_consistency": 0.4722222222222222,
+        "distribution": {
+          "MidDoors": 17,
+          "UnderA": 1,
+          "OutsideTunnel": 11,
+          "OutsideLong": 5,
+          "TopofMid": 2
+        }
+      }
+    ]
+  },
+  "notice": "敏感性实验描述阈值变化如何影响本场规则结果，不等于分类准确率或参数最优性证明。"
+}

@@ -1,0 +1,28 @@
+# Local runtime
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+
+# Uploaded and test demos can be large and may contain personal identifiers.
+data/demo/*
+!data/demo/.gitkeep
+data/interim/
+data/processed/
+data/output/
+data/map_assets/
+data/experiments/
+data/runtime/
+data/tools/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local secrets
+.env
+.streamlit/secrets.toml
+

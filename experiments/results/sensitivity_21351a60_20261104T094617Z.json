@@ -1,0 +1,1823 @@
+{
+  "run_id": "20261104T094617Z",
+  "database": "21351a607463.sqlite",
+  "analysis_id": "21351a60746307807935e6e2ce799d51fe366daaf92c7538195daaf72561fec1",
+  "map_name": "de_ancient",
+  "player_count": 10,
+  "parameters": {
+    "near_distance_thresholds": [
+      300,
+      400,
+      500,
+      600,
+      700,
+      800
+    ],
+    "far_distance_thresholds": [
+      600,
+      700,
+      800,
+      900,
+      1000,
+      1200
+    ],
+    "early_windows_seconds": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ]
+  },
+  "players": [
+    {
+      "player_label": "P01",
+      "distance_sample_count": 2284,
+      "distance_median": 205.74571549511143
+    },
+    {
+      "player_label": "P02",
+      "distance_sample_count": 2418,
+      "distance_median": 230.27477626085857
+    },
+    {
+      "player_label": "P03",
+      "distance_sample_count": 2266,
+      "distance_median": 158.66859931731236
+    },
+    {
+      "player_label": "P04",
+      "distance_sample_count": 2241,
+      "distance_median": 191.7072192248248
+    },
+    {
+      "player_label": "P05",
+      "distance_sample_count": 2438,
+      "distance_median": 223.24822882905698
+    },
+    {
+      "player_label": "P06",
+      "distance_sample_count": 2256,
+      "distance_median": 190.9347339564027
+    },
+    {
+      "player_label": "P07",
+      "distance_sample_count": 2224,
+      "distance_median": 183.70641637419274
+    },
+    {
+      "player_label": "P08",
+      "distance_sample_count": 2197,
+      "distance_median": 153.15994791328387
+    },
+    {
+      "player_label": "P09",
+      "distance_sample_count": 2175,
+      "distance_median": 162.39877476816375
+    },
+    {
+      "player_label": "P10",
+      "distance_sample_count": 2244,
+      "distance_median": 172.47703781712306
+    }
+  ],
+  "distance_aggregate": {
+    "near": [
+      {
+        "threshold": 300,
+        "player_mean_ratio": 0.5728514956514998,
+        "player_ratio_min": 0.5413564929693961,
+        "player_ratio_max": 0.6045977011494252
+      },
+      {
+        "threshold": 400,
+        "player_mean_ratio": 0.6268051141327409,
+        "player_ratio_min": 0.5806451612903226,
+        "player_ratio_max": 0.675198587819947
+      },
+      {
+        "threshold": 500,
+        "player_mean_ratio": 0.6721012704409521,
+        "player_ratio_min": 0.6215880893300249,
+        "player_ratio_max": 0.7087378640776699
+      },
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.7133886711919123,
+        "player_ratio_min": 0.6592224979321754,
+        "player_ratio_max": 0.7455621301775148
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.7535182593691648,
+        "player_ratio_min": 0.6960297766749379,
+        "player_ratio_max": 0.7842493847415914
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.7895586203532983,
+        "player_ratio_min": 0.7415219189412737,
+        "player_ratio_max": 0.8174783796085571
+      }
+    ],
+    "far": [
+      {
+        "threshold": 600,
+        "player_mean_ratio": 0.28661132880808765,
+        "player_ratio_min": 0.25443786982248523,
+        "player_ratio_max": 0.34077750206782464
+      },
+      {
+        "threshold": 700,
+        "player_mean_ratio": 0.24648174063083514,
+        "player_ratio_min": 0.21575061525840852,
+        "player_ratio_max": 0.303970223325062
+      },
+      {
+        "threshold": 800,
+        "player_mean_ratio": 0.21044137964670173,
+        "player_ratio_min": 0.18252162039144287,
+        "player_ratio_max": 0.2584780810587262
+      },
+      {
+        "threshold": 900,
+        "player_mean_ratio": 0.1788205162290927,
+        "player_ratio_min": 0.15339098771051435,
+        "player_ratio_max": 0.22456575682382135
+      },
+      {
+        "threshold": 1000,
+        "player_mean_ratio": 0.1487962094651146,
+        "player_ratio_min": 0.11561219845243514,
+        "player_ratio_max": 0.19469424460431656
+      },
+      {
+        "threshold": 1200,
+        "player_mean_ratio": 0.10115504229732238,
+        "player_ratio_min": 0.06693440428380187,
+        "player_ratio_max": 0.12994604316546762
+      }
+    ]
+  },
+  "early_window_aggregate": [
+    {
+      "window_seconds": 5,
+      "player_mean_consistency": 0.49261751628742473,
+      "player_consistency_min": 0.3157894736842105,
+      "player_consistency_max": 0.6875
+    },
+    {
+      "window_seconds": 10,
+      "player_mean_consistency": 0.4582705929261657,
+      "player_consistency_min": 0.35294117647058826,
+      "player_consistency_max": 0.6875
+    },
+    {
+      "window_seconds": 15,
+      "player_mean_consistency": 0.44386363636363635,
+      "player_consistency_min": 0.36363636363636365,
+      "player_consistency_max": 0.55
+    },
+    {
+      "window_seconds": 20,
+      "player_mean_consistency": 0.43224637681159417,
+      "player_consistency_min": 0.34782608695652173,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 25,
+      "player_mean_consistency": 0.4375,
+      "player_consistency_min": 0.375,
+      "player_consistency_max": 0.5
+    },
+    {
+      "window_seconds": 30,
+      "player_mean_consistency": 0.4375,
+      "player_consistency_min": 0.375,
+      "player_consistency_max": 0.5
+    }
+  ],
+  "details": {
+    "distance": [
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5455341506129597,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5932574430823118,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6339754816112084,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6720665499124343,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7158493870402802,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7740805604203153,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3279334500875657,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2841506129597198,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.22591943957968477,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.18432574430823118,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.15367775831873906,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P01",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.09588441330998249,
+        "sample_count": 2284
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5413564929693961,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.5806451612903226,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6215880893300249,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6592224979321754,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.6960297766749379,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7415219189412737,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.34077750206782464,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.303970223325062,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2584780810587262,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.22456575682382135,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.1869313482216708,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P02",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.12572373862696443,
+        "sample_count": 2418
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5997352162400706,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.675198587819947,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.7087378640776699,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7413945278022948,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7819947043248014,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8111209179170344,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2586054721977052,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.21800529567519858,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.18887908208296558,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.1553398058252427,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.1204766107678729,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P03",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.07502206531332745,
+        "sample_count": 2266
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5671575189647479,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6269522534582775,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6778224007139669,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7202141900937081,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7666220437304775,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8107987505577867,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2797858099062918,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.23337795626952254,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.1892012494422133,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.15618027666220438,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.11825078090138331,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P04",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.06693440428380187,
+        "sample_count": 2241
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5529122231337161,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6296144380639869,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6981132075471698,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7452830188679245,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7842493847415914,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8105004101722724,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.25471698113207547,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.21575061525840852,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.18949958982772763,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.16488925348646433,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.13781788351107466,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P05",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.10090237899917966,
+        "sample_count": 2438
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5691489361702128,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6227836879432624,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6710992907801419,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7154255319148937,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7655141843971631,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8040780141843972,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.2845744680851064,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.23448581560283688,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.19592198581560283,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.16578014184397163,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.13430851063829788,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P06",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.09574468085106383,
+        "sample_count": 2256
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5696942446043165,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6164568345323741,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6609712230215827,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.6964928057553957,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.72931654676259,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7544964028776978,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.3035071942446043,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.27068345323741005,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.24550359712230216,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.21672661870503598,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.19469424460431656,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P07",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.12994604316546762,
+        "sample_count": 2224
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.6017296313154301,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.647246244879381,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6932180245789713,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7455621301775148,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.782430587164315,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.8174783796085571,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.25443786982248523,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.21756941283568504,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.18252162039144287,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.15339098771051435,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.11561219845243514,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P08",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.08284023668639054,
+        "sample_count": 2197
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.6045977011494252,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6537931034482759,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6914942528735633,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7301149425287357,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7618390804597701,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7894252873563219,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.26988505747126434,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.2381609195402299,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.21057471264367816,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.1820689655172414,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.15908045977011495,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P09",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.12045977011494254,
+        "sample_count": 2175
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 300,
+        "ratio": 0.5766488413547237,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 400,
+        "ratio": 0.6221033868092691,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 500,
+        "ratio": 0.6639928698752228,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 600,
+        "ratio": 0.7081105169340464,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 700,
+        "ratio": 0.7513368983957219,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "near",
+        "threshold": 800,
+        "ratio": 0.7820855614973262,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 600,
+        "ratio": 0.29188948306595364,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 700,
+        "ratio": 0.24866310160427807,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 800,
+        "ratio": 0.2179144385026738,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 900,
+        "ratio": 0.18493761140819964,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1000,
+        "ratio": 0.16711229946524064,
+        "sample_count": 2244
+      },
+      {
+        "player_label": "P10",
+        "comparison": "far",
+        "threshold": 1200,
+        "ratio": 0.11809269162210338,
+        "sample_count": 2244
+      }
+    ],
+    "early_window": [
+      {
+        "player_label": "P01",
+        "window_seconds": 5,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P01",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 10,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 5,
+        "rounds_with_route": 16,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.6875,
+        "distribution": {
+          "Outside": 1,
+          "Tunnel": 3,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 10,
+        "rounds_with_route": 16,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.6875,
+        "distribution": {
+          "Outside": 1,
+          "Tunnel": 3,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 15,
+        "rounds_with_route": 20,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.55,
+        "distribution": {
+          "Outside": 3,
+          "Tunnel": 5,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 6,
+          "Tunnel": 6,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 6,
+          "Tunnel": 6,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P02",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 6,
+          "Tunnel": 6,
+          "House": 11,
+          "Alley": 1
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 5,
+        "rounds_with_route": 21,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.47619047619047616,
+        "distribution": {
+          "Outside": 10,
+          "BombsiteA": 6,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 10,
+        "rounds_with_route": 22,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.45454545454545453,
+        "distribution": {
+          "Outside": 10,
+          "BombsiteA": 7,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 11,
+          "Tunnel": 1,
+          "BombsiteA": 7,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 11,
+          "Tunnel": 1,
+          "BombsiteA": 7,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 11,
+          "Tunnel": 1,
+          "BombsiteA": 7,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P03",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "Outside": 11,
+          "Tunnel": 1,
+          "BombsiteA": 7,
+          "House": 5
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 5,
+        "rounds_with_route": 23,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4782608695652174,
+        "distribution": {
+          "Outside": 11,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Outside": 12,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Outside": 12,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Outside": 12,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Outside": 12,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P04",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "Outside": 12,
+          "BombsiteA": 1,
+          "House": 11
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 5,
+        "rounds_with_route": 9,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5555555555555556,
+        "distribution": {
+          "Outside": 2,
+          "Tunnel": 1,
+          "House": 5,
+          "BombsiteA": 1
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 10,
+        "rounds_with_route": 17,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.35294117647058826,
+        "distribution": {
+          "Outside": 3,
+          "Tunnel": 2,
+          "House": 6,
+          "BombsiteA": 6
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 15,
+        "rounds_with_route": 22,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.36363636363636365,
+        "distribution": {
+          "Outside": 8,
+          "Tunnel": 2,
+          "House": 6,
+          "BombsiteA": 6
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 20,
+        "rounds_with_route": 23,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.391304347826087,
+        "distribution": {
+          "Outside": 9,
+          "Tunnel": 2,
+          "House": 6,
+          "BombsiteA": 6
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "Outside": 10,
+          "Tunnel": 2,
+          "House": 6,
+          "BombsiteA": 6
+        }
+      },
+      {
+        "player_label": "P05",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.4166666666666667,
+        "distribution": {
+          "Outside": 10,
+          "Tunnel": 2,
+          "House": 6,
+          "BombsiteA": 6
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 5,
+        "rounds_with_route": 11,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5454545454545454,
+        "distribution": {
+          "House": 6,
+          "BombsiteA": 2,
+          "Outside": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 10,
+        "rounds_with_route": 19,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.42105263157894735,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 4,
+          "Outside": 4,
+          "Tunnel": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 15,
+        "rounds_with_route": 20,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 4,
+          "Outside": 5,
+          "Tunnel": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 20,
+        "rounds_with_route": 23,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.34782608695652173,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 4,
+          "Outside": 8,
+          "Tunnel": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 4,
+          "Outside": 9,
+          "Tunnel": 3
+        }
+      },
+      {
+        "player_label": "P06",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "Outside",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 4,
+          "Outside": 9,
+          "Tunnel": 3
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 5,
+        "rounds_with_route": 16,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 8,
+          "BombsiteA": 1,
+          "Outside": 7
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "House": 11,
+          "BombsiteA": 1,
+          "Outside": 11,
+          "Tunnel": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "House": 11,
+          "BombsiteA": 1,
+          "Outside": 11,
+          "Tunnel": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "House": 11,
+          "BombsiteA": 1,
+          "Outside": 11,
+          "Tunnel": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "House": 11,
+          "BombsiteA": 1,
+          "Outside": 11,
+          "Tunnel": 1
+        }
+      },
+      {
+        "player_label": "P07",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4583333333333333,
+        "distribution": {
+          "House": 11,
+          "BombsiteA": 1,
+          "Outside": 11,
+          "Tunnel": 1
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 5,
+        "rounds_with_route": 22,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.4090909090909091,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 3,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 5,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 5,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 5,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 5,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P08",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "BombsiteA": 1,
+          "House": 9,
+          "Alley": 2,
+          "Outside": 5,
+          "Tunnel": 7
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 5,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P09",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.5,
+        "distribution": {
+          "House": 12,
+          "Outside": 10,
+          "Tunnel": 2
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 5,
+        "rounds_with_route": 19,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.3157894736842105,
+        "distribution": {
+          "House": 6,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 10,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 9,
+          "Alley": 2,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 15,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 9,
+          "Alley": 2,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 20,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 9,
+          "Alley": 2,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 25,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 9,
+          "Alley": 2,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      },
+      {
+        "player_label": "P10",
+        "window_seconds": 30,
+        "rounds_with_route": 24,
+        "dominant_first_place": "House",
+        "dominant_consistency": 0.375,
+        "distribution": {
+          "House": 9,
+          "Alley": 2,
+          "BombsiteA": 1,
+          "Outside": 6,
+          "Tunnel": 6
+        }
+      }
+    ]
+  },
+  "notice": "敏感性实验描述阈值变化如何影响本场规则结果，不等于分类准确率或参数最优性证明。"
+}

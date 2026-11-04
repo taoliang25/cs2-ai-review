@@ -1,0 +1,191 @@
+﻿player_label,metric_key,value,unit,sample_size,confidence,evidence_count,demo_index
+P01,kills,8,次,10,,8,1
+P01,deaths,8,次,10,,8,1
+P01,assists,1,次,10,,1,1
+P01,opening_contact_rate,0.1,比例,10,1.0,1,1
+P01,opening_kills,0,次,10,,1,1
+P01,opening_deaths,0,次,10,,1,1
+P01,nearest_teammate_distance_median,553.9270705923901,世界坐标单位,632,,9,1
+P01,near_teammate_ratio,0.47943037974683544,比例,632,,9,1
+P01,far_teammate_ratio,0.375,比例,632,,9,1
+P01,support_nearby_rate,0.2222222222222222,比例,9,1.0,9,1
+P01,support_response_rate,0.0,比例,2,0.4,9,1
+P01,top_places,"BombsiteA,BombsiteB,SnipersNest,Shop,PalaceInterior",,190,,9,1
+P01,first_exit_places,SnipersNest | SnipersNest | SnipersNest | SnipersNest | Jungle | Shop | SnipersNest | BombsiteA | BombsiteA,,9,,9,1
+P01,advantage_far_teammate_ratio,,比例,0,0.0,9,1
+P01,disadvantage_far_teammate_ratio,0.35402298850574715,比例,435,1.0,9,1
+P01,clutch_rounds,1,回合,10,1.0,1,1
+P01,utility_effect_rounds,3,回合,10,,4,1
+P01,utility_purchases,"{""flashbang"": 3, ""smokegrenade"": 5, ""hegrenade"": 4, ""molotov"": 0, ""incgrenade"": 0}",,20,,20,1
+P01,utility_effects,"{""utility_damage"": 2, ""flash_blind"": 2}",,4,,4,1
+P02,kills,6,次,10,,6,1
+P02,deaths,7,次,10,,7,1
+P02,assists,2,次,10,,2,1
+P02,opening_contact_rate,0.1,比例,10,1.0,1,1
+P02,opening_kills,0,次,10,,1,1
+P02,opening_deaths,2,次,10,,1,1
+P02,nearest_teammate_distance_median,420.0841398759442,世界坐标单位,544,,9,1
+P02,near_teammate_ratio,0.5330882352941176,比例,544,,9,1
+P02,far_teammate_ratio,0.35110294117647056,比例,544,,9,1
+P02,support_nearby_rate,0.25,比例,8,1.0,8,1
+P02,support_response_rate,0.0,比例,2,0.4,8,1
+P02,top_places,"BombsiteB,BombsiteA,Catwalk,Underpass,Apartments",,325,,9,1
+P02,first_exit_places,Shop | Shop | Shop | BombsiteA | Shop | Shop | Shop | BombsiteA | Shop,,9,,9,1
+P02,advantage_far_teammate_ratio,,比例,0,0.0,9,1
+P02,disadvantage_far_teammate_ratio,0.3614457831325301,比例,415,1.0,9,1
+P02,clutch_rounds,2,回合,10,1.0,2,1
+P02,utility_effect_rounds,1,回合,10,,1,1
+P02,utility_purchases,"{""flashbang"": 4, ""smokegrenade"": 4, ""hegrenade"": 2, ""molotov"": 0, ""incgrenade"": 0}",,16,,16,1
+P02,utility_effects,"{""utility_damage"": 1}",,1,,1,1
+P03,kills,2,次,10,,2,1
+P03,deaths,9,次,10,,9,1
+P03,assists,3,次,10,,3,1
+P03,opening_contact_rate,0.1,比例,10,1.0,1,1
+P03,opening_kills,0,次,10,,1,1
+P03,opening_deaths,3,次,10,,1,1
+P03,nearest_teammate_distance_median,180.7490300369603,世界坐标单位,480,,9,1
+P03,near_teammate_ratio,0.6145833333333334,比例,480,,9,1
+P03,far_teammate_ratio,0.3,比例,480,,9,1
+P03,support_nearby_rate,0.0,比例,8,1.0,8,1
+P03,support_response_rate,,比例,0,0.0,8,1
+P03,top_places,"BombsiteB,Apartments,Shop,BombsiteA,Jungle",,199,,9,1
+P03,first_exit_places,Shop | Shop | Shop | Shop | Shop | SnipersNest | BombsiteA | BombsiteA | Jungle,,9,,9,1
+P03,advantage_far_teammate_ratio,,比例,0,0.0,9,1
+P03,disadvantage_far_teammate_ratio,0.24702380952380953,比例,336,1.0,9,1
+P03,clutch_rounds,0,回合,10,1.0,0,1
+P03,utility_effect_rounds,1,回合,10,,1,1
+P03,utility_purchases,"{""flashbang"": 2, ""smokegrenade"": 1, ""hegrenade"": 1, ""molotov"": 0, ""incgrenade"": 0}",,12,,12,1
+P03,utility_effects,"{""utility_damage"": 1}",,1,,1,1
+P04,kills,2,次,10,,2,1
+P04,deaths,7,次,10,,7,1
+P04,assists,3,次,10,,3,1
+P04,opening_contact_rate,0.3,比例,10,1.0,3,1
+P04,opening_kills,0,次,10,,3,1
+P04,opening_deaths,2,次,10,,3,1
+P04,nearest_teammate_distance_median,497.8428187568224,世界坐标单位,534,,6,1
+P04,near_teammate_ratio,0.50187265917603,比例,534,,6,1
+P04,far_teammate_ratio,0.40636704119850187,比例,534,,6,1
+P04,support_nearby_rate,0.0,比例,8,1.0,8,1
+P04,support_response_rate,,比例,0,0.0,8,1
+P04,top_places,"PalaceInterior,BombsiteA,PalaceAlley,Stairs,BackAlley",,222,,6,1
+P04,first_exit_places,BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA,,6,,6,1
+P04,advantage_far_teammate_ratio,,比例,0,0.0,6,1
+P04,disadvantage_far_teammate_ratio,0.3725,比例,400,1.0,6,1
+P04,clutch_rounds,4,回合,10,1.0,4,1
+P04,utility_effect_rounds,2,回合,10,,13,1
+P04,utility_purchases,"{""flashbang"": 2, ""smokegrenade"": 3, ""hegrenade"": 3, ""molotov"": 0, ""incgrenade"": 0}",,14,,14,1
+P04,utility_effects,"{""flash_blind"": 5, ""utility_damage"": 8}",,13,,13,1
+P05,kills,4,次,9,,4,1
+P05,deaths,9,次,9,,9,1
+P05,assists,0,次,9,,0,1
+P05,opening_contact_rate,0.3333333333333333,比例,9,0.9,3,1
+P05,opening_kills,1,次,9,,3,1
+P05,opening_deaths,1,次,9,,3,1
+P05,nearest_teammate_distance_median,487.07943205499623,世界坐标单位,566,,9,1
+P05,near_teammate_ratio,0.5141342756183745,比例,566,,9,1
+P05,far_teammate_ratio,0.36395759717314485,比例,566,,9,1
+P05,support_nearby_rate,0.375,比例,8,1.0,8,1
+P05,support_response_rate,0.0,比例,3,0.6,8,1
+P05,top_places,"BombsiteA,PalaceInterior,Connector,Jungle,Shop",,305,,9,1
+P05,first_exit_places,BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | BombsiteA | SnipersNest | BombsiteA | SnipersNest,,9,,9,1
+P05,advantage_far_teammate_ratio,,比例,0,0.0,9,1
+P05,disadvantage_far_teammate_ratio,0.33153638814016173,比例,371,1.0,9,1
+P05,clutch_rounds,1,回合,9,0.9,1,1
+P05,utility_effect_rounds,3,回合,9,,9,1
+P05,utility_purchases,"{""flashbang"": 5, ""smokegrenade"": 4, ""hegrenade"": 0, ""molotov"": 0, ""incgrenade"": 0}",,20,,20,1
+P05,utility_effects,"{""flash_blind"": 9}",,9,,9,1
+P06,kills,11,次,10,,11,1
+P06,deaths,4,次,10,,4,1
+P06,assists,1,次,10,,1,1
+P06,opening_contact_rate,0.2,比例,10,1.0,2,1
+P06,opening_kills,1,次,10,,2,1
+P06,opening_deaths,0,次,10,,2,1
+P06,nearest_teammate_distance_median,346.1380066812902,世界坐标单位,720,,9,1
+P06,near_teammate_ratio,0.5527777777777778,比例,720,,9,1
+P06,far_teammate_ratio,0.3263888888888889,比例,720,,9,1
+P06,support_nearby_rate,0.1111111111111111,比例,9,1.0,9,1
+P06,support_response_rate,0.0,比例,1,0.2,9,1
+P06,top_places,"TopofMid,Middle,Catwalk,PalaceInterior,SideAlley",,484,,9,1
+P06,first_exit_places,SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | PalaceInterior | SideAlley,,9,,9,1
+P06,advantage_far_teammate_ratio,0.34355828220858897,比例,489,1.0,9,1
+P06,disadvantage_far_teammate_ratio,,比例,0,0.0,9,1
+P06,clutch_rounds,2,回合,10,1.0,2,1
+P06,utility_effect_rounds,7,回合,10,,32,1
+P06,utility_purchases,"{""flashbang"": 9, ""smokegrenade"": 5, ""hegrenade"": 2, ""molotov"": 6, ""incgrenade"": 0}",,27,,27,1
+P06,utility_effects,"{""flash_blind"": 18, ""utility_damage"": 14}",,32,,32,1
+P07,kills,4,次,10,,4,1
+P07,deaths,2,次,10,,2,1
+P07,assists,1,次,10,,1,1
+P07,opening_contact_rate,0.1,比例,10,1.0,1,1
+P07,opening_kills,0,次,10,,1,1
+P07,opening_deaths,0,次,10,,1,1
+P07,nearest_teammate_distance_median,348.6251775681649,世界坐标单位,757,,9,1
+P07,near_teammate_ratio,0.5587846763540291,比例,757,,9,1
+P07,far_teammate_ratio,0.24834874504623514,比例,757,,9,1
+P07,support_nearby_rate,0.3333333333333333,比例,9,1.0,9,1
+P07,support_response_rate,0.0,比例,3,0.6,9,1
+P07,top_places,"BackAlley,TopofMid,BombsiteA,PalaceInterior,Middle",,472,,9,1
+P07,first_exit_places,SideAlley | SideAlley | SideAlley | PalaceInterior | PalaceInterior | SideAlley | SideAlley | SideAlley | SideAlley,,9,,9,1
+P07,advantage_far_teammate_ratio,0.25285171102661597,比例,526,1.0,9,1
+P07,disadvantage_far_teammate_ratio,,比例,0,0.0,9,1
+P07,clutch_rounds,0,回合,10,1.0,0,1
+P07,utility_effect_rounds,5,回合,10,,21,1
+P07,utility_purchases,"{""flashbang"": 9, ""smokegrenade"": 7, ""hegrenade"": 8, ""molotov"": 6, ""incgrenade"": 0}",,38,,38,1
+P07,utility_effects,"{""flash_blind"": 11, ""utility_damage"": 10}",,21,,21,1
+P08,kills,9,次,10,,9,1
+P08,deaths,4,次,10,,4,1
+P08,assists,1,次,10,,1,1
+P08,opening_contact_rate,0.2,比例,10,1.0,2,1
+P08,opening_kills,5,次,10,,2,1
+P08,opening_deaths,0,次,10,,2,1
+P08,nearest_teammate_distance_median,212.64721671402057,世界坐标单位,693,,9,1
+P08,near_teammate_ratio,0.7243867243867244,比例,693,,9,1
+P08,far_teammate_ratio,0.12698412698412698,比例,693,,9,1
+P08,support_nearby_rate,0.1111111111111111,比例,9,1.0,9,1
+P08,support_response_rate,0.0,比例,1,0.2,9,1
+P08,top_places,"Underpass,Middle,BombsiteB,House,BackAlley",,467,,9,1
+P08,first_exit_places,SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley,,9,,9,1
+P08,advantage_far_teammate_ratio,0.11026615969581749,比例,526,1.0,9,1
+P08,disadvantage_far_teammate_ratio,,比例,0,0.0,9,1
+P08,clutch_rounds,0,回合,10,1.0,0,1
+P08,utility_effect_rounds,6,回合,10,,13,1
+P08,utility_purchases,"{""flashbang"": 8, ""smokegrenade"": 7, ""hegrenade"": 7, ""molotov"": 7, ""incgrenade"": 0}",,34,,34,1
+P08,utility_effects,"{""flash_blind"": 6, ""utility_damage"": 7}",,13,,13,1
+P09,kills,5,次,10,,5,1
+P09,deaths,7,次,10,,7,1
+P09,assists,2,次,10,,2,1
+P09,opening_contact_rate,0.1,比例,10,1.0,1,1
+P09,opening_kills,0,次,10,,1,1
+P09,opening_deaths,1,次,10,,1,1
+P09,nearest_teammate_distance_median,192.8914584630769,世界坐标单位,632,,9,1
+P09,near_teammate_ratio,0.7278481012658228,比例,632,,9,1
+P09,far_teammate_ratio,0.13291139240506328,比例,632,,9,1
+P09,support_nearby_rate,0.25,比例,8,1.0,8,1
+P09,support_response_rate,0.5,比例,2,0.4,8,1
+P09,top_places,"Middle,TopofMid,BombsiteA,SideAlley,Stairs",,419,,9,1
+P09,first_exit_places,SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley | SideAlley,,9,,9,1
+P09,advantage_far_teammate_ratio,0.13272311212814644,比例,437,1.0,9,1
+P09,disadvantage_far_teammate_ratio,,比例,0,0.0,9,1
+P09,clutch_rounds,0,回合,10,1.0,0,1
+P09,utility_effect_rounds,4,回合,10,,8,1
+P09,utility_purchases,"{""flashbang"": 4, ""smokegrenade"": 4, ""hegrenade"": 6, ""molotov"": 5, ""incgrenade"": 0}",,26,,26,1
+P09,utility_effects,"{""flash_blind"": 6, ""utility_damage"": 2}",,8,,8,1
+P10,kills,11,次,10,,11,1
+P10,deaths,5,次,10,,5,1
+P10,assists,4,次,10,,4,1
+P10,opening_contact_rate,0.3,比例,10,1.0,3,1
+P10,opening_kills,2,次,10,,3,1
+P10,opening_deaths,0,次,10,,3,1
+P10,nearest_teammate_distance_median,266.2591005229915,世界坐标单位,673,,9,1
+P10,near_teammate_ratio,0.6062407132243685,比例,673,,9,1
+P10,far_teammate_ratio,0.27191679049034173,比例,673,,9,1
+P10,support_nearby_rate,0.2222222222222222,比例,9,1.0,9,1
+P10,support_response_rate,0.5,比例,2,0.4,9,1
+P10,top_places,"BombsiteA,PalaceInterior,BombsiteB,TRamp,Middle",,422,,9,1
+P10,first_exit_places,SideAlley | PalaceAlley | PalaceAlley | SideAlley | PalaceAlley | SideAlley | SideAlley | SideAlley | PalaceAlley,,9,,9,1
+P10,advantage_far_teammate_ratio,0.22286821705426357,比例,516,1.0,9,1
+P10,disadvantage_far_teammate_ratio,,比例,0,0.0,9,1
+P10,clutch_rounds,0,回合,10,1.0,0,1
+P10,utility_effect_rounds,5,回合,10,,14,1
+P10,utility_purchases,"{""flashbang"": 4, ""smokegrenade"": 7, ""hegrenade"": 4, ""molotov"": 2, ""incgrenade"": 0}",,22,,22,1
+P10,utility_effects,"{""flash_blind"": 6, ""utility_damage"": 8}",,14,,14,1
