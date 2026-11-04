@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import hmac
+import html
 import json
 import os
 import re
@@ -61,6 +62,11 @@ from cs2_review.llm_report import (
     LLMReportError,
     OpenAICompatibleReportProvider,
 )
+from cs2_review.map_callouts import (
+    localize_place_name,
+    localize_text,
+    map_display_name,
+)
 from cs2_review.report_store import save_report
 from cs2_review.visualization import (
     build_economy_figure,
@@ -89,6 +95,820 @@ EVENT_LABELS = {
     "drop": "丢弃炸弹",
     "item_purchase": "购买",
 }
+
+
+def _inject_global_styles() -> None:
+    st.markdown(
+        """
+        <style>
+        :root {
+            --cs2-bg: #091018;
+            --cs2-panel: #101a24;
+            --cs2-panel-2: #142230;
+            --cs2-border: #26394b;
+            --cs2-text: #f2f6f9;
+            --cs2-muted: #91a2b2;
+            --cs2-orange: #ff6b35;
+            --cs2-cyan: #39c6d6;
+            --cs2-green: #46d19a;
+            --cs2-yellow: #f2bd57;
+            --cs2-red: #ef6b6b;
+        }
+        html, body, [class*="css"] {
+            font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+        }
+        .stApp {
+            background:
+                radial-gradient(circle at 8% 0%, rgba(57, 198, 214, 0.08), transparent 30rem),
+                radial-gradient(circle at 92% 10%, rgba(255, 107, 53, 0.07), transparent 28rem),
+                var(--cs2-bg);
+            color: var(--cs2-text);
+        }
+        [data-testid="stHeader"] {
+            background: rgba(9, 16, 24, 0.72);
+        }
+        .block-container {
+            max-width: 1380px;
+            padding-top: 2.2rem;
+            padding-bottom: 4rem;
+        }
+        h1, h2, h3, h4 {
+            letter-spacing: 0.01em;
+        }
+        p, label, .stMarkdown {
+            color: #d7e0e7;
+        }
+        [data-testid="stSidebar"] {
+            background: #0c151e;
+            border-right: 1px solid var(--cs2-border);
+        }
+        [data-testid="stSidebar"] .block-container {
+            padding-top: 1.4rem;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] {
+            background: linear-gradient(145deg, rgba(20, 34, 48, 0.94), rgba(13, 24, 34, 0.96));
+            border: 1px solid var(--cs2-border);
+            border-radius: 13px;
+        }
+        [data-testid="stMetric"] {
+            min-height: 118px;
+            padding: 14px 15px;
+            background: linear-gradient(145deg, #142230, #101a24);
+            border: 1px solid var(--cs2-border);
+            border-radius: 12px;
+        }
+        [data-testid="stMetricLabel"] {
+            color: var(--cs2-muted);
+        }
+        [data-testid="stMetricValue"] {
+            color: var(--cs2-text);
+            font-family: "Bahnschrift", "Microsoft YaHei", sans-serif;
+        }
+        .stButton > button,
+        .stDownloadButton > button,
+        [data-testid="stFormSubmitButton"] > button {
+            min-height: 2.6rem;
+            border-radius: 8px;
+            border: 1px solid #355067;
+            background: #172838;
+            color: var(--cs2-text);
+            font-weight: 500;
+            transition: border-color 120ms ease, transform 120ms ease;
+        }
+        .stButton > button:hover,
+        .stDownloadButton > button:hover,
+        [data-testid="stFormSubmitButton"] > button:hover {
+            border-color: var(--cs2-orange);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .stButton > button[kind="primary"],
+        [data-testid="stFormSubmitButton"] > button[kind="primary"] {
+            background: var(--cs2-orange);
+            border-color: var(--cs2-orange);
+            color: #fff;
+        }
+        [data-baseweb="select"] > div,
+        [data-baseweb="input"] > div,
+        .stTextInput input,
+        .stTextArea textarea {
+            background: #111e2a !important;
+            border-color: var(--cs2-border) !important;
+            color: var(--cs2-text) !important;
+        }
+        [data-testid="stFileUploaderDropzone"] {
+            background: #0e1923;
+            border: 1px dashed #3d5b73;
+            border-radius: 12px;
+        }
+        [data-testid="stFileUploaderDropzone"]:hover {
+            border-color: var(--cs2-orange);
+        }
+        [data-testid="stForm"] {
+            padding: 1.1rem;
+            background: #101a24;
+            border: 1px solid var(--cs2-border);
+            border-radius: 14px;
+        }
+        [data-testid="stTabs"] [data-baseweb="tab-list"] {
+            gap: 0.25rem;
+            padding: 0.28rem;
+            background: #101a24;
+            border: 1px solid var(--cs2-border);
+            border-radius: 10px;
+        }
+        [data-testid="stTabs"] [data-baseweb="tab"] {
+            height: 2.75rem;
+            padding: 0 1rem;
+            border-radius: 7px;
+            color: var(--cs2-muted);
+        }
+        [data-testid="stTabs"] [aria-selected="true"] {
+            background: #273846;
+            color: #fff;
+        }
+        [data-testid="stDataFrame"] {
+            border: 1px solid var(--cs2-border);
+            border-radius: 10px;
+        }
+        div[data-testid="stAlert"] {
+            border-radius: 10px;
+        }
+        .cs2-brandbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1.35rem;
+            background: rgba(16, 26, 36, 0.86);
+            border: 1px solid var(--cs2-border);
+            border-radius: 12px;
+        }
+        .cs2-brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .cs2-brand-mark {
+            display: grid;
+            place-items: center;
+            width: 2rem;
+            height: 2rem;
+            color: var(--cs2-orange);
+            background: rgba(255, 107, 53, 0.13);
+            border: 1px solid rgba(255, 107, 53, 0.35);
+            border-radius: 8px;
+            font-size: 1.15rem;
+        }
+        .cs2-brand-name {
+            color: #fff;
+            font-family: "Bahnschrift", "Microsoft YaHei", sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+        }
+        .cs2-brand-note {
+            color: var(--cs2-muted);
+            font-size: 0.75rem;
+        }
+        .cs2-step {
+            color: var(--cs2-orange);
+            font-family: "Bahnschrift", monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .cs2-section-title {
+            margin: 0.15rem 0 0.2rem;
+            color: var(--cs2-text);
+            font-size: 1.55rem;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        .cs2-section-copy {
+            margin-bottom: 0.9rem;
+            color: var(--cs2-muted);
+            font-size: 0.86rem;
+        }
+        .cs2-hero {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 0.65rem 0 1rem;
+            padding: 1.35rem 1.45rem;
+            overflow: hidden;
+            background:
+                linear-gradient(105deg, rgba(8, 15, 22, 0.92), rgba(17, 34, 47, 0.82)),
+                repeating-linear-gradient(135deg, transparent 0 18px, rgba(255,255,255,0.025) 18px 19px);
+            border: 1px solid #304658;
+            border-radius: 14px;
+        }
+        .cs2-hero::after {
+            content: "TACTICAL REVIEW";
+            position: absolute;
+            top: 0.7rem;
+            right: 1.1rem;
+            color: rgba(255,255,255,0.055);
+            font-family: "Bahnschrift", sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.12em;
+            pointer-events: none;
+        }
+        .cs2-player {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .cs2-avatar {
+            display: grid;
+            place-items: center;
+            width: 3.1rem;
+            height: 3.1rem;
+            color: var(--cs2-cyan);
+            background: rgba(57, 198, 214, 0.12);
+            border: 1px solid rgba(57, 198, 214, 0.35);
+            border-radius: 11px;
+            font-family: "Bahnschrift", monospace;
+            font-size: 1.15rem;
+        }
+        .cs2-player h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .cs2-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.45rem;
+        }
+        .cs2-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.18rem 0.48rem;
+            color: #aab9c6;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid var(--cs2-border);
+            border-radius: 5px;
+            font-size: 0.72rem;
+        }
+        .cs2-pill.cyan {
+            color: var(--cs2-cyan);
+            background: rgba(57, 198, 214, 0.12);
+            border-color: rgba(57, 198, 214, 0.28);
+        }
+        .cs2-score {
+            position: relative;
+            z-index: 1;
+            min-width: 8.5rem;
+            padding-left: 1.2rem;
+            text-align: right;
+            border-left: 1px solid #354a5d;
+        }
+        .cs2-score strong {
+            color: var(--cs2-text);
+            font-family: "Bahnschrift", monospace;
+            font-size: 2.3rem;
+            font-weight: 500;
+        }
+        .cs2-score span {
+            display: block;
+            color: var(--cs2-muted);
+            font-size: 0.75rem;
+        }
+        .cs2-coach-card {
+            height: 100%;
+            padding: 1rem 1.05rem;
+            background:
+                linear-gradient(155deg, rgba(57,198,214,0.08), transparent 48%),
+                var(--cs2-panel);
+            border: 1px solid var(--cs2-border);
+            border-radius: 13px;
+        }
+        .cs2-coach-card h3 {
+            margin: 0.25rem 0 0.55rem;
+            color: #fff;
+            font-size: 1.18rem;
+            font-weight: 500;
+            line-height: 1.42;
+        }
+        .cs2-coach-card p {
+            color: #bfcbd4;
+            font-size: 0.84rem;
+        }
+        .cs2-coach-kicker {
+            color: var(--cs2-cyan);
+            font-family: "Bahnschrift", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+        .cs2-priority-list {
+            display: grid;
+            gap: 0.45rem;
+            margin-top: 0.9rem;
+        }
+        .cs2-priority-item {
+            display: grid;
+            grid-template-columns: 1.65rem minmax(0, 1fr);
+            gap: 0.5rem;
+            padding: 0.6rem;
+            background: rgba(255,255,255,0.035);
+            border-radius: 7px;
+        }
+        .cs2-priority-num {
+            display: grid;
+            place-items: center;
+            width: 1.65rem;
+            height: 1.65rem;
+            color: var(--cs2-yellow);
+            background: rgba(242,189,87,0.13);
+            border-radius: 5px;
+            font-family: "Bahnschrift", monospace;
+            font-size: 0.72rem;
+        }
+        .cs2-priority-item strong {
+            display: block;
+            color: #eef3f7;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .cs2-priority-item span {
+            display: block;
+            margin-top: 0.1rem;
+            color: var(--cs2-muted);
+            font-size: 0.72rem;
+        }
+        .cs2-panel-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.7rem;
+            margin: 0.4rem 0 0.55rem;
+            color: #edf3f7;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .cs2-panel-title small {
+            color: var(--cs2-muted);
+            font-size: 0.72rem;
+            font-weight: 400;
+        }
+        .cs2-report-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin: 0.7rem 0;
+            padding: 0.75rem 0.9rem;
+            background: #101a24;
+            border: 1px solid var(--cs2-border);
+            border-radius: 10px;
+        }
+        .cs2-report-head strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .cs2-report-head span {
+            color: var(--cs2-muted);
+            font-size: 0.75rem;
+        }
+        .cs2-report-section {
+            margin: 0.8rem 0 0.3rem;
+            padding: 0.7rem 0.85rem;
+            color: #fff;
+            background: #142230;
+            border-left: 3px solid var(--cs2-orange);
+            border-radius: 0 8px 8px 0;
+            font-size: 1.02rem;
+            font-weight: 500;
+        }
+        .cs2-claim {
+            margin: 0.35rem 0;
+            padding: 0.65rem 0.8rem;
+            background: #0f1a24;
+            border: 1px solid #223445;
+            border-radius: 8px;
+            color: #d7e1e8;
+            font-size: 0.84rem;
+            line-height: 1.7;
+        }
+        .cs2-claim.observation {
+            border-left: 3px solid var(--cs2-cyan);
+        }
+        .cs2-claim.inference {
+            border-left: 3px solid var(--cs2-yellow);
+        }
+        .cs2-claim.recommendation {
+            border-left: 3px solid var(--cs2-green);
+        }
+        .cs2-claim-label {
+            display: inline-block;
+            margin-right: 0.35rem;
+            color: var(--cs2-muted);
+            font-size: 0.68rem;
+        }
+        .cs2-round-card {
+            padding: 0.9rem 1rem;
+            background: linear-gradient(145deg, #142230, #101a24);
+            border: 1px solid var(--cs2-border);
+            border-radius: 11px;
+        }
+        .cs2-round-card h3 {
+            margin: 0.18rem 0 0.55rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .cs2-round-card p {
+            color: #b7c4ce;
+            font-size: 0.82rem;
+        }
+        .cs2-kicker {
+            color: var(--cs2-orange);
+            font-family: "Bahnschrift", monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+        }
+        @media (max-width: 720px) {
+            .block-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .cs2-hero {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .cs2-score {
+                width: 100%;
+                padding: 0.7rem 0 0;
+                text-align: left;
+                border-top: 1px solid #354a5d;
+                border-left: 0;
+            }
+            .cs2-player h2 {
+                font-size: 1.55rem;
+            }
+            .cs2-brand-note {
+                display: none;
+            }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _render_brandbar() -> None:
+    st.markdown(
+        """
+        <div class="cs2-brandbar">
+          <div class="cs2-brand-lockup">
+            <span class="cs2-brand-mark">◎</span>
+            <div>
+              <div class="cs2-brand-name">CS2 TACTICAL REVIEW</div>
+              <div class="cs2-brand-note">单场对局 · 单玩家 · 证据驱动</div>
+            </div>
+          </div>
+          <span class="cs2-pill cyan">行为推断，不读取玩家想法</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _render_section_intro(
+    step: str,
+    title: str,
+    description: str,
+) -> None:
+    st.markdown(
+        f"""
+        <div class="cs2-step">{html.escape(step)}</div>
+        <div class="cs2-section-title">{html.escape(title)}</div>
+        <div class="cs2-section-copy">{html.escape(description)}</div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _metric_value(metric: dict, map_name: str | None = None) -> str:
+    value = metric["value"]
+    if value is None:
+        return "证据不足"
+    if metric["unit"] == "比例" and isinstance(value, (int, float)):
+        return f"{value * 100:.0f}%"
+    if isinstance(value, str):
+        return localize_text(map_name, value)
+    if isinstance(value, float):
+        return f"{value:.1f}"
+    return str(value)
+
+
+def _side_label(side: str | None) -> str:
+    return {
+        "terrorist": "T 进攻方",
+        "counter-terrorist": "CT 防守方",
+    }.get(str(side or ""), "阵营未知")
+
+
+def _render_player_hero(player: dict, match: dict) -> None:
+    player_name = html.escape(str(player.get("name") or "未知玩家"))
+    map_name = html.escape(map_display_name(match.get("map_name")))
+    side = html.escape(_side_label(player.get("starting_side")))
+    score = match.get("score", {})
+    t_score = html.escape(str(score.get("terrorist", 0)))
+    ct_score = html.escape(str(score.get("counter-terrorist", 0)))
+    rounds = html.escape(str(match.get("round_count", 0)))
+    st.markdown(
+        f"""
+        <div class="cs2-hero">
+          <div class="cs2-player">
+            <div class="cs2-avatar">{player_name[:2]}</div>
+            <div>
+              <h2>{player_name}</h2>
+              <div class="cs2-tag-row">
+                <span class="cs2-pill cyan">{side}</span>
+                <span class="cs2-pill">{map_name}</span>
+                <span class="cs2-pill">{rounds} 回合</span>
+                <span class="cs2-pill">证据驱动</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs2-score">
+            <strong>{t_score} : {ct_score}</strong>
+            <span>T / CT · 本场比分</span>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _coach_summary(
+    facts: dict,
+    metrics: dict[str, dict],
+) -> tuple[str, str, list[tuple[str, str]]]:
+    support_rate = metrics["support_nearby_rate"]["value"]
+    far_ratio = metrics["far_teammate_ratio"]["value"]
+    contact_rate = metrics["opening_contact_rate"]["value"]
+    opening_kills = metrics["opening_kills"]["value"] or 0
+    opening_deaths = metrics["opening_deaths"]["value"] or 0
+
+    strengths: list[str] = []
+    if opening_kills:
+        strengths.append(f"完成 {opening_kills} 次首杀")
+    kills = metrics["kills"]["value"] or 0
+    if kills:
+        strengths.append(f"本场取得 {kills} 次击杀")
+
+    priorities: list[tuple[str, str]] = []
+    if isinstance(support_rate, (int, float)) and support_rate < 0.35:
+        priorities.append(
+            (
+                "支援时机偏晚",
+                f"队友接敌时就近比例仅 {support_rate * 100:.0f}%",
+            )
+        )
+    if isinstance(far_ratio, (int, float)) and far_ratio >= 0.3:
+        priorities.append(
+            (
+                "远端行动偏多",
+                f"{far_ratio * 100:.0f}% 的位置采样远离最近队友",
+            )
+        )
+    if (
+        isinstance(contact_rate, (int, float))
+        and contact_rate >= 0.4
+        and opening_deaths >= max(1, opening_kills)
+    ):
+        priorities.append(
+            (
+                "首轮交火风险偏高",
+                "先确认补枪距离或道具保护条件",
+            )
+        )
+    if not priorities:
+        priorities.extend(
+            [
+                ("继续记录路线收益", "比较控图、信息和团队支援的结果"),
+                ("固定团队重组习惯", "人数变化后先确认最近队友位置"),
+                ("复盘道具使用目的", "检查投掷是否为队友创造空间"),
+            ]
+        )
+
+    if support_rate is not None and support_rate < 0.35:
+        headline = "个人输出有亮点，团队衔接是优先改进方向"
+        copy = (
+            f"你本场完成 {kills} 次击杀，但队友接敌时就近比例只有 "
+            f"{support_rate * 100:.0f}%。下一步优先练习交火前换位，"
+            "比继续只追求个人对枪更容易改善回合结果。"
+        )
+    elif far_ratio is not None and far_ratio >= 0.3:
+        headline = "地图覆盖较积极，远端行动需要更好的重组规则"
+        copy = (
+            f"本场有 {far_ratio * 100:.0f}% 的位置采样远离最近队友。"
+            "独立控图本身不是问题，关键是人数变化后能及时说明何时回队。"
+        )
+    elif strengths:
+        headline = "整体执行较连贯，可以把本场成功路径固定下来"
+        copy = (
+            f"本场优势包括{'、'.join(strengths[:2])}。"
+            "继续核对这些结果是否来自可重复的路线、道具和队友配合。"
+        )
+    else:
+        headline = "本场样本有限，先建立可重复的行为基线"
+        copy = "建议继续积累同类局面，区分稳定习惯和单回合偶然表现。"
+    return headline, copy, priorities[:3]
+
+
+def _render_coach_summary(facts: dict, metrics: dict[str, dict]) -> None:
+    headline, copy, priorities = _coach_summary(facts, metrics)
+    priority_html = "".join(
+        (
+            '<div class="cs2-priority-item">'
+            f'<span class="cs2-priority-num">0{index}</span>'
+            f"<div><strong>{html.escape(title)}</strong>"
+            f"<span>{html.escape(detail)}</span></div></div>"
+        )
+        for index, (title, detail) in enumerate(priorities, start=1)
+    )
+    st.markdown(
+        f"""
+        <div class="cs2-coach-card">
+          <div class="cs2-coach-kicker">AI COACH · 本场摘要</div>
+          <h3>{html.escape(headline)}</h3>
+          <p>{html.escape(copy)}</p>
+          <div class="cs2-priority-list">{priority_html}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def _clean_claim_text(text: str) -> str:
+    return re.sub(r"\s*（证据：[^）]+）", "", str(text)).strip()
+
+
+def _render_claim(
+    text: str,
+    claim_type: str,
+    evidence_ids: list[str],
+) -> None:
+    labels = {
+        "observation": "事实",
+        "inference": "行为推断",
+        "recommendation": "训练建议",
+    }
+    kind = claim_type if claim_type in labels else "observation"
+    st.markdown(
+        f"""
+        <div class="cs2-claim {kind}">
+          <span class="cs2-claim-label">{labels[kind]}</span>
+          {html.escape(_clean_claim_text(text))}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    if evidence_ids:
+        with st.expander(f"查看证据 · {len(evidence_ids)} 条", expanded=False):
+            st.code("\n".join(evidence_ids), language=None)
+
+
+def _render_structured_report(report, facts: dict) -> None:
+    structured = report.structured
+    sections = structured.get("sections")
+    map_name = facts["match"]["map_name"]
+    provider_text = report.provider
+    if report.provider_model:
+        provider_text += f" / {report.provider_model}"
+    st.markdown(
+        f"""
+        <div class="cs2-report-head">
+          <strong>AI 教练复盘</strong>
+          <span>{html.escape(provider_text)} · 证据已校验</span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    headline = structured.get("headline")
+    if headline:
+        st.markdown(
+            f'<div class="cs2-claim recommendation">'
+            f'<span class="cs2-claim-label">一句话结论</span>'
+            f"{html.escape(str(headline))}</div>",
+            unsafe_allow_html=True,
+        )
+
+    if isinstance(sections, list) and sections:
+        for section in sections:
+            title = html.escape(str(section.get("title") or "复盘结论"))
+            st.markdown(
+                f'<div class="cs2-report-section">{title}</div>',
+                unsafe_allow_html=True,
+            )
+            for claim in section.get("claims", []):
+                _render_claim(
+                    str(claim.get("text") or ""),
+                    str(claim.get("claim_type") or "observation"),
+                    [str(item) for item in claim.get("evidence_ids", [])],
+                )
+        return
+
+    profile = structured.get("profile") or structured.get(
+        "player_profile",
+        {},
+    )
+    if profile.get("style"):
+        _render_claim(
+            localize_text(map_name, str(profile["style"])),
+            "inference",
+            [],
+        )
+    if profile.get("strengths"):
+        for item in profile["strengths"]:
+            _render_claim(
+                localize_text(map_name, str(item)),
+                "observation",
+                [],
+            )
+    if profile.get("issues"):
+        for item in profile["issues"]:
+            _render_claim(
+                localize_text(map_name, str(item)),
+                "recommendation",
+                [],
+            )
+    if profile.get("game_state_difference"):
+        _render_claim(
+            localize_text(
+                map_name,
+                str(profile["game_state_difference"]),
+            ),
+            "inference",
+            [],
+        )
+
+    for category, title in [
+        ("excellent", "表现较好的回合"),
+        ("problem", "优先复盘回合"),
+        ("high_impact", "高影响回合"),
+    ]:
+        round_fact = facts["key_rounds"].get(category)
+        if not round_fact:
+            continue
+        narrative = round_fact.get("narrative", {})
+        st.markdown(
+            f'<div class="cs2-report-section">'
+            f"{html.escape(title)} · 第 {round_fact['round_num']} 回合</div>",
+            unsafe_allow_html=True,
+        )
+        if narrative.get("summary"):
+            _render_claim(
+                localize_text(
+                    map_name,
+                    str(narrative["summary"]),
+                ),
+                "observation",
+                list(narrative.get("evidence_ids", [])),
+            )
+        for item in narrative.get("impact", []):
+            _render_claim(
+                localize_text(map_name, str(item)),
+                "inference",
+                [],
+            )
+        for item in narrative.get("alternatives", []):
+            _render_claim(
+                localize_text(map_name, str(item)),
+                "recommendation",
+                [],
+            )
+
+    st.markdown(
+        '<div class="cs2-report-section">本轮优先训练方向</div>',
+        unsafe_allow_html=True,
+    )
+    metrics = {item["key"]: item for item in facts["metrics"]}
+    _, _, priorities = _coach_summary(facts, metrics)
+    for title, detail in priorities:
+        _render_claim(
+            f"{title}：{detail}",
+            "recommendation",
+            [],
+        )
+    evidence_ids = structured.get("evidence_ids", [])
+    if evidence_ids:
+        with st.expander(
+            f"查看报告证据 · {len(evidence_ids)} 条",
+            expanded=False,
+        ):
+            st.code("\n".join(map(str, evidence_ids)), language=None)
 
 
 def _session_work_dir() -> Path:
@@ -196,85 +1016,101 @@ def _parse_or_reuse(
 
 
 def _render_upload() -> Path | None:
-    st.subheader("1. 上传单场 Demo")
-    uploaded = st.file_uploader(
-        "选择 CS2 常规 5v5 Demo",
-        type=["dem"],
-        help="首版一次只分析一场 .dem。Demo 可能包含玩家标识，默认仅在本机处理。",
+    _render_section_intro(
+        "STEP 01 · IMPORT",
+        "导入一场对局",
+        "上传 .dem 文件，系统会建立临时事实库；原始文件在解析完成后立即删除。",
     )
-    upload_id = None
-    if uploaded is not None:
-        if uploaded.size > 1024**3:
-            st.error("单个 Demo 不能超过 1 GB。")
-        else:
-            upload_id = str(
-                getattr(
-                    uploaded,
-                    "file_id",
-                    f"{uploaded.name}:{uploaded.size}",
-                )
-            )
-            already_processed = (
-                st.session_state.get("processed_upload_id") == upload_id
-            )
-            if not already_processed:
-                work_dir = _session_work_dir()
-                temporary = work_dir / f".uploading-{uuid.uuid4().hex}.dem"
-                digest = hashlib.sha256()
-                with temporary.open("wb") as stream:
-                    while chunk := uploaded.read(8 * 1024 * 1024):
-                        digest.update(chunk)
-                        stream.write(chunk)
-                saved = work_dir / f"upload-{digest.hexdigest()[:12]}.dem"
-                if saved.exists():
-                    temporary.unlink()
-                else:
-                    temporary.replace(saved)
-                if st.button("解析这场 Demo", type="primary"):
-                    return _parse_or_reuse(
-                        saved,
-                        temporary=True,
-                        upload_id=upload_id,
-                    )
-
-    cached_demos = (
-        sorted(DEMO_DIR.glob("*.dem")) if DEMO_DIR.is_dir() else []
-    )
-    cached_demos = [
-        path for path in cached_demos
-        if path.resolve() != PUBLIC_SAMPLE_DEMO.resolve()
-    ]
-    if PUBLIC_SAMPLE_DEMO.is_file():
-        cached_demos.insert(0, PUBLIC_SAMPLE_DEMO)
-    if cached_demos:
-        preferred = next(
-            (
-                path for path in cached_demos
-                if path.name == "furia-vs-falcons-m2-nuke.dem"
+    with st.container(border=True):
+        uploaded = st.file_uploader(
+            "选择 CS2 常规 5v5 Demo",
+            type=["dem"],
+            help=(
+                "一次只分析一场 .dem。文件大小上限为 1 GB，"
+                "上传内容仅用于本次临时分析。"
             ),
-            SAMPLE_DEMO if SAMPLE_DEMO in cached_demos else cached_demos[0],
         )
-        selected_demo = st.selectbox(
-            "已缓存验证 Demo",
-            cached_demos,
-            index=cached_demos.index(preferred),
-            format_func=lambda path: path.name,
+        upload_id = None
+        if uploaded is not None:
+            if uploaded.size > 1024**3:
+                st.error("单个 Demo 不能超过 1 GB。")
+            else:
+                upload_id = str(
+                    getattr(
+                        uploaded,
+                        "file_id",
+                        f"{uploaded.name}:{uploaded.size}",
+                    )
+                )
+                already_processed = (
+                    st.session_state.get("processed_upload_id") == upload_id
+                )
+                if not already_processed:
+                    work_dir = _session_work_dir()
+                    temporary = work_dir / (
+                        f".uploading-{uuid.uuid4().hex}.dem"
+                    )
+                    digest = hashlib.sha256()
+                    with temporary.open("wb") as stream:
+                        while chunk := uploaded.read(8 * 1024 * 1024):
+                            digest.update(chunk)
+                            stream.write(chunk)
+                    saved = work_dir / (
+                        f"upload-{digest.hexdigest()[:12]}.dem"
+                    )
+                    if saved.exists():
+                        temporary.unlink()
+                    else:
+                        temporary.replace(saved)
+                    if st.button("解析这场 Demo", type="primary"):
+                        return _parse_or_reuse(
+                            saved,
+                            temporary=True,
+                            upload_id=upload_id,
+                        )
+
+        cached_demos = (
+            sorted(DEMO_DIR.glob("*.dem"))
+            if DEMO_DIR.is_dir()
+            else []
         )
-        st.caption("开发环境可复用已授权的测试 Demo，也可直接上传自己的 Demo。")
-        if st.button("载入已缓存的测试 Demo"):
-            return _parse_or_reuse(selected_demo, temporary=False)
+        cached_demos = [
+            path for path in cached_demos
+            if path.resolve() != PUBLIC_SAMPLE_DEMO.resolve()
+        ]
+        if PUBLIC_SAMPLE_DEMO.is_file():
+            cached_demos.insert(0, PUBLIC_SAMPLE_DEMO)
+        if cached_demos:
+            preferred = next(
+                (
+                    path for path in cached_demos
+                    if path.name == "furia-vs-falcons-m2-nuke.dem"
+                ),
+                (
+                    SAMPLE_DEMO
+                    if SAMPLE_DEMO in cached_demos
+                    else cached_demos[0]
+                ),
+            )
+            st.divider()
+            st.markdown(
+                '<div class="cs2-panel-title">'
+                "或者载入公开演示样本"
+                "<small>无需准备文件</small></div>",
+                unsafe_allow_html=True,
+            )
+            selected_demo = st.selectbox(
+                "已缓存验证 Demo",
+                cached_demos,
+                index=cached_demos.index(preferred),
+                format_func=lambda path: path.name,
+            )
+            st.caption(
+                "公开演示用于验证完整流程；自己的 Demo 更能代表个人习惯。"
+            )
+            if st.button("载入已缓存的测试 Demo"):
+                return _parse_or_reuse(selected_demo, temporary=False)
     return None
-
-
-def _metric_value(metric: dict) -> str:
-    value = metric["value"]
-    if value is None:
-        return "证据不足"
-    if metric["unit"] == "比例" and isinstance(value, (int, float)):
-        return f"{value * 100:.0f}%"
-    if isinstance(value, float):
-        return f"{value:.1f}"
-    return str(value)
 
 
 def _load_event_rows(
@@ -364,8 +1200,13 @@ def _render_analysis(database_path: Path) -> None:
         )
 
     with st.sidebar:
-        st.caption("本地分析会话")
-        st.code(analysis["map_name"] or "未知地图")
+        st.markdown("### 分析设置")
+        st.markdown(
+            f'<span class="cs2-pill cyan">'
+            f'{html.escape(map_display_name(analysis["map_name"]))}'
+            "</span>",
+            unsafe_allow_html=True,
+        )
         st.caption(f"Demo 哈希前 12 位：{analysis['demo_sha256'][:12]}")
         st.divider()
         st.markdown("**报告生成方式**")
@@ -400,16 +1241,27 @@ def _render_analysis(database_path: Path) -> None:
             st.session_state.pop("authenticated", None)
             st.rerun()
 
-    st.subheader("2. 选择主要分析玩家")
+    _render_section_intro(
+        "STEP 02 · PLAYER",
+        "选择主要分析玩家",
+        "从真实玩家列表中选择一人，后续画像、回合和证据都只围绕该玩家。",
+    )
     labels = {
-        f"{player.name}｜{player.starting_side or '未知阵营'}｜{player.steamid}":
-        player
+        (
+            f"{player.name}｜{_side_label(player.starting_side)}"
+            f"｜{player.steamid}"
+        ): player
         for player in players
     }
-    selected_label = st.selectbox("点击选择玩家", list(labels))
-    selected: PlayerOption = labels[selected_label]
+    with st.container(border=True):
+        selected_label = st.selectbox("点击选择玩家", list(labels))
+        selected: PlayerOption = labels[selected_label]
+        generate_clicked = st.button(
+            "生成 AI 画像与复盘",
+            type="primary",
+        )
 
-    if st.button("生成本场画像与复盘", type="primary"):
+    if generate_clicked:
         with st.spinner("正在计算真实事件指标、关键回合和报告……"):
             facts = analyze_player(
                 database_path,
@@ -445,7 +1297,7 @@ def _render_analysis(database_path: Path) -> None:
     if not facts:
         return
     if facts["player"]["steamid"] != selected.steamid:
-        st.info("分析玩家已更改，请点击“生成本场画像与复盘”。")
+        st.info("分析玩家已更改，请点击“生成 AI 画像与复盘”。")
         return
 
     match = facts["match"]
@@ -453,34 +1305,66 @@ def _render_analysis(database_path: Path) -> None:
     metrics = {item["key"]: item for item in facts["metrics"]}
     report = st.session_state["report"]
 
-    header_left, header_right = st.columns([3, 1])
-    with header_left:
-        st.header(f"{player['name']} 的《{match['map_name']}》复盘")
-    with header_right:
-        st.metric(
-            "比分 T / CT",
-            f"{match['score']['terrorist']} / "
-            f"{match['score']['counter-terrorist']}",
-        )
+    _render_player_hero(player, match)
 
     tabs = st.tabs(
-        ["全场总览", "位置与路线", "关键回合", "单回合复盘", "智能复盘报告"]
+        ["教练总览", "位置与路线", "关键回合", "单回合复盘", "完整报告"]
     )
     with tabs[0]:
         columns = st.columns(4)
         card_keys = [
-            ("kills", "击杀"),
+            ("kills", "本场击杀"),
             ("opening_contact_rate", "首轮交火参与率"),
             ("far_teammate_ratio", "远离队友比例"),
             ("support_nearby_rate", "队友接敌时就近比例"),
         ]
         for column, (key, label) in zip(columns, card_keys):
-            column.metric(label, _metric_value(metrics[key]))
+            column.metric(
+                label,
+                _metric_value(metrics[key], match["map_name"]),
+            )
 
+        map_column, coach_column = st.columns([1.45, 0.8])
+        with map_column:
+            st.markdown(
+                '<div class="cs2-panel-title">'
+                "本场位置分布"
+                "<small>热区 + 回合路线</small></div>",
+                unsafe_allow_html=True,
+            )
+            overview_radar = build_radar_figure(
+                database_path,
+                analysis_id=match["analysis_id"],
+                steamid=selected.steamid,
+                map_name=match["map_name"],
+                round_num=None,
+                height=460,
+            )
+            if overview_radar is not None:
+                st.plotly_chart(
+                    overview_radar,
+                    width="stretch",
+                    key="overview_radar",
+                )
+            else:
+                st.info("当前地图缺少本地雷达资源。")
+        with coach_column:
+            _render_coach_summary(facts, metrics)
+
+        top_places = localize_text(
+            match["map_name"],
+            metrics["top_places"]["value"],
+        )
+        first_exits = localize_text(
+            match["map_name"],
+            metrics["first_exit_places"]["value"],
+        )
         st.markdown(
-            f"**活动区域：** {metrics['top_places']['value'] or '证据不足'}  \n"
-            f"**常用离开出生区地点：** "
-            f"{metrics['first_exit_places']['value'] or '证据不足'}"
+            f'<div class="cs2-pill">活动区域：'
+            f"{html.escape(top_places or '证据不足')}</div> "
+            f'<div class="cs2-pill">常用离开出生区：'
+            f"{html.escape(first_exits or '证据不足')}</div>",
+            unsafe_allow_html=True,
         )
         pattern_summary = facts.get("tactical_patterns", {}).get("summary", {})
         if pattern_summary.get("dominant_zone"):
@@ -488,7 +1372,7 @@ def _render_analysis(database_path: Path) -> None:
             st.markdown(
                 "**战术模式线索：** "
                 f"早期区域规则主要识别到 "
-                f"{pattern_summary['dominant_zone']} 区"
+                f"{localize_text(match['map_name'], pattern_summary['dominant_zone'])} 区"
                 + (
                     f"（{rate * 100:.0f}% 的有效路线回合）"
                     if isinstance(rate, (int, float))
@@ -502,8 +1386,8 @@ def _render_analysis(database_path: Path) -> None:
                 "系统只展示真实地点名称，不强行给出大区域偏好。"
             )
         st.markdown("#### 回合时间线")
+        timeline_rows = []
         for round_fact in facts["rounds"]:
-            result = "胜" if round_fact["team_won"] else "负"
             opening = (
                 "首杀"
                 if round_fact["opening_kill"]
@@ -513,23 +1397,45 @@ def _render_analysis(database_path: Path) -> None:
                 if round_fact["opening_contact"]
                 else "未参与首轮交火"
             )
-            st.markdown(
-                f"**R{round_fact['round_num']} · {result}**  "
-                f"K/D/A {round_fact['kills']}/{round_fact['deaths']}/"
-                f"{round_fact['assists']} · {opening} · "
-                f"{' → '.join(round_fact['early_route']) or '路线样本不足'}"
+            route = [
+                localize_place_name(match["map_name"], place)
+                for place in round_fact.get("early_route", [])
+            ]
+            timeline_rows.append(
+                {
+                    "回合": f"R{round_fact['round_num']}",
+                    "结果": "获胜" if round_fact["team_won"] else "失利",
+                    "K / D / A": (
+                        f"{round_fact['kills']} / "
+                        f"{round_fact['deaths']} / "
+                        f"{round_fact['assists']}"
+                    ),
+                    "首轮交火": opening,
+                    "早期路线": " → ".join(route) or "样本不足",
+                }
             )
-
-        st.markdown("#### 回合经济")
-        st.plotly_chart(
-            build_economy_figure(
-                database_path,
-                analysis_id=match["analysis_id"],
-            ),
+        st.dataframe(
+            pd.DataFrame(timeline_rows),
+            hide_index=True,
             width="stretch",
         )
 
+        with st.expander("查看队伍经济变化", expanded=False):
+            st.plotly_chart(
+                build_economy_figure(
+                    database_path,
+                    analysis_id=match["analysis_id"],
+                ),
+                width="stretch",
+                key="overview_economy",
+            )
+
     with tabs[1]:
+        _render_section_intro(
+            "MAP VIEW",
+            "位置与行动路线",
+            "切换全场或单个回合，查看逐秒位置、热区与原始地点证据。",
+        )
         round_options = ["全场"] + [
             f"第 {item['round_num']} 回合" for item in facts["rounds"]
         ]
@@ -551,7 +1457,11 @@ def _render_analysis(database_path: Path) -> None:
             round_num=selected_round,
         )
         if radar is not None:
-            st.plotly_chart(radar, width="stretch")
+            st.plotly_chart(
+                radar,
+                width="stretch",
+                key=f"position_radar_{selected_round or 'all'}",
+            )
         else:
             st.info("当前地图缺少本地雷达资源，暂时无法绘制位置图。")
 
@@ -561,26 +1471,76 @@ def _render_analysis(database_path: Path) -> None:
             ("problem", "优先复盘回合"),
             ("high_impact", "高影响回合"),
         ]
+        grouped_rounds: dict[int, tuple[dict, list[str]]] = {}
         for category, title in keys:
             round_fact = facts["key_rounds"].get(category)
             if not round_fact:
                 continue
+            round_num = int(round_fact["round_num"])
+            if round_num in grouped_rounds:
+                grouped_rounds[round_num][1].append(title)
+            else:
+                grouped_rounds[round_num] = (round_fact, [title])
+
+        for round_num, (round_fact, titles) in grouped_rounds.items():
             narrative = round_fact.get("narrative", {})
             st.markdown(
-                f"### {title}：第 {round_fact['round_num']} 回合\n\n"
-                f"{narrative.get('summary', '')}\n\n"
-                f"- 本队结果："
-                f"{'获胜' if round_fact['team_won'] else '失利'}\n"
-                f"- K/D/A：{round_fact['kills']}/"
-                f"{round_fact['deaths']}/{round_fact['assists']}\n"
-                f"- 早期路线："
-                f"{' → '.join(round_fact['early_route']) or '采样不足'}\n"
-                f"- 系统评分：优先复盘分 {round_fact['problem_score']:.2f}；"
-                f"综合影响分 {round_fact['impact_score']:.2f}\n"
-                "- 说明：评分用于排序复盘优先级，不代表系统已确认真实意图。"
+                f"""
+                <div class="cs2-round-card">
+                  <div class="cs2-kicker">{html.escape(" · ".join(titles))}</div>
+                  <h3>第 {round_num} 回合 ·
+                    {'本队获胜' if round_fact['team_won'] else '本队失利'}
+                  </h3>
+                  <div class="cs2-tag-row">
+                    <span class="cs2-pill">K/D/A
+                      {round_fact['kills']}/{round_fact['deaths']}/
+                      {round_fact['assists']}
+                    </span>
+                    <span class="cs2-pill">路线
+                      {html.escape(
+                          " → ".join(
+                              localize_place_name(
+                                  match["map_name"],
+                                  place,
+                              )
+                              for place in round_fact.get("early_route", [])
+                          )
+                          or "采样不足"
+                      )}
+                    </span>
+                  </div>
+                  <p>{html.escape(localize_text(
+                      match["map_name"],
+                      narrative.get("summary", "该回合证据不足"),
+                  ))}</p>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            with st.expander("可选方案与证据", expanded=False):
+                for item in narrative.get("impact", []):
+                    st.markdown(
+                        f"- **影响：** "
+                        f"{localize_text(match['map_name'], item)}"
+                    )
+                for item in narrative.get("alternatives", []):
+                    st.markdown(
+                        f"- **可尝试：** "
+                        f"{localize_text(match['map_name'], item)}"
+                    )
+                evidence_ids = round_fact.get("decision_evidence_ids", [])
+                if evidence_ids:
+                    st.code("\n".join(evidence_ids), language=None)
+            st.caption(
+                "评分用于排序复盘优先级，不代表系统已确认真实意图。"
             )
 
     with tabs[3]:
+        _render_section_intro(
+            "ROUND REVIEW",
+            "单回合决策复盘",
+            "把地图位置、关键事件和队友阵亡后的可选行动放在同一条决策链里。",
+        )
         round_num = st.selectbox(
             "选择要深入复盘的回合",
             [item["round_num"] for item in facts["rounds"]],
@@ -597,7 +1557,11 @@ def _render_analysis(database_path: Path) -> None:
             round_num=round_num,
         )
         if detail_radar is not None:
-            st.plotly_chart(detail_radar, width="stretch")
+            st.plotly_chart(
+                detail_radar,
+                width="stretch",
+                key=f"detail_radar_{round_num}",
+            )
         timeline = _load_event_rows(
             database_path,
             match["analysis_id"],
@@ -608,14 +1572,22 @@ def _render_analysis(database_path: Path) -> None:
         else:
             st.dataframe(timeline, hide_index=True, width="stretch")
         narrative = round_fact.get("narrative", {})
-        st.markdown(f"**回合经过：** {narrative.get('summary', '证据不足')}")
+        st.markdown("#### 回合经过")
+        st.markdown(
+            localize_text(
+                match["map_name"],
+                narrative.get("summary", "证据不足"),
+            )
+        )
         if narrative.get("impact"):
-            st.markdown("**可观测影响：**")
+            st.markdown("#### 这一回合产生了什么影响")
             for item in narrative["impact"]:
-                st.markdown(f"- {item}")
+                st.markdown(
+                    f"- {localize_text(match['map_name'], item)}"
+                )
         death_contexts = round_fact.get("teammate_death_contexts", [])
         if death_contexts:
-            st.markdown("**队友阵亡后的位置上下文：**")
+            st.markdown("#### 队友阵亡后，下一步应该做什么")
             for context in death_contexts:
                 distance = context.get("distance_to_nearest_alive_teammate")
                 distance_text = (
@@ -623,18 +1595,33 @@ def _render_analysis(database_path: Path) -> None:
                     if isinstance(distance, (int, float))
                     else "未知"
                 )
+                teammate_death_place = localize_place_name(
+                    match["map_name"],
+                    context.get("teammate_death_place"),
+                )
+                player_place = localize_place_name(
+                    match["map_name"],
+                    context.get("player_place"),
+                )
+                nearest_place = localize_place_name(
+                    match["map_name"],
+                    context.get("nearest_alive_teammate_place"),
+                )
                 st.markdown(
                     f"- 第 {context['seconds_since_freeze']:.0f} 秒："
-                    f"队友在 {context.get('teammate_death_place') or '未知区域'}"
-                    f"阵亡；你在 {context.get('player_place') or '未知区域'}。"
+                    f"队友在 {teammate_death_place or '未知区域'}"
+                    f"阵亡；你在 {player_place or '未知区域'}。"
                     f"最近存活队友在 "
-                    f"{context.get('nearest_alive_teammate_place') or '未知区域'}"
+                    f"{nearest_place or '未知区域'}"
                     f"（距离 {distance_text}）；"
                     f"当前存活 {context.get('teammates_alive')} 对 "
                     f"{context.get('enemies_alive')}。"
                 )
                 for suggestion in context.get("suggestions", []):
-                    st.markdown(f"  - 建议：{suggestion}")
+                    st.markdown(
+                        "  - 建议："
+                        + localize_text(match["map_name"], suggestion)
+                    )
         round_patterns = next(
             (
                 item["patterns"]
@@ -649,27 +1636,29 @@ def _render_analysis(database_path: Path) -> None:
             st.markdown("**可解释战术模式：**")
             for pattern in round_patterns:
                 st.markdown(
-                    f"- {pattern['label']}：{pattern['rationale']}"
+                    f"- {localize_text(match['map_name'], pattern['label'])}："
+                    f"{localize_text(match['map_name'], pattern['rationale'])}"
                     f"（置信度规则值 {pattern['confidence']:.2f}）"
                 )
         if narrative.get("alternatives"):
-            st.markdown("**赛后可选方案：**")
+            st.markdown("#### 下次遇到类似局面可以尝试")
             for item in narrative["alternatives"]:
-                st.markdown(f"- {item}")
+                st.markdown(
+                    f"- {localize_text(match['map_name'], item)}"
+                )
             st.caption("以上是复盘建议，不是当时唯一正确答案。")
 
     with tabs[4]:
-        st.caption(
-            f"报告提供方：{report.provider}"
-            + (
-                f" / {report.provider_model}"
-                if report.provider_model
-                else " / 本地模板"
-            )
+        _render_section_intro(
+            "AI REPORT",
+            "证据约束的教练复盘",
+            "事实、行为推断和训练建议分层展示；原始证据编号按需展开。",
         )
         if st.session_state.get("report_warning"):
             st.warning(st.session_state["report_warning"])
-        st.markdown(report.markdown)
+        _render_structured_report(report, facts)
+        with st.expander("查看完整 Markdown 报告原文", expanded=False):
+            st.markdown(report.markdown)
         file_stem = f"{_safe_file_stem(player['name'])}_cs2_review"
         download_columns = st.columns(3)
         with download_columns[0]:
@@ -713,11 +1702,8 @@ def main() -> None:
         layout="wide",
     )
     _load_streamlit_secrets()
-    st.title("CS2 战术识别与赛后智能复盘")
-    st.caption(
-        "单场 Demo · 单个玩家 · 事件证据驱动。"
-        "系统分析行为倾向，不读取玩家真实想法。"
-    )
+    _inject_global_styles()
+    _render_brandbar()
 
     if access_control_required() and not st.session_state.get(
         "authenticated"
@@ -726,14 +1712,21 @@ def main() -> None:
         if not required_code:
             st.error("服务器尚未配置访问口令，请联系项目维护者。")
             st.stop()
-        st.subheader("访问验证")
+        _render_section_intro(
+            "PRIVATE ACCESS",
+            "进入战术复盘工作台",
+            "输入项目维护者提供的访问口令。系统只分析行为倾向，不读取玩家真实想法。",
+        )
         with st.form("access_form"):
             entered = st.text_input(
                 "访问口令",
                 type="password",
                 autocomplete="current-password",
             )
-            submitted = st.form_submit_button("进入")
+            submitted = st.form_submit_button(
+                "进入复盘工作台",
+                type="primary",
+            )
         if submitted:
             if hmac.compare_digest(entered, required_code):
                 st.session_state["authenticated"] = True
@@ -752,7 +1745,16 @@ def main() -> None:
             with st.expander("排查信息"):
                 st.exception(exc)
     else:
-        st.info("请上传一场常规 5v5 CS2 Demo，或载入已缓存的测试样本。")
+        st.markdown(
+            """
+            <div class="cs2-coach-card">
+              <div class="cs2-coach-kicker">GET STARTED</div>
+              <h3>上传一场 Demo，开始看懂自己的决策</h3>
+              <p>系统会先解析真实事件和位置，再围绕你选择的玩家生成画像、关键回合、证据和训练建议。</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
 
 if __name__ == "__main__":

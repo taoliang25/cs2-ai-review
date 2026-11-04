@@ -11,6 +11,8 @@ import numpy as np
 import plotly.graph_objects as go
 from PIL import Image
 
+from cs2_review.map_callouts import localize_place_name
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAP_DATA_VERSION = "2000940"
 DEFAULT_MAP_ASSET_DIR = (
@@ -58,6 +60,7 @@ def build_radar_figure(
     steamid: str,
     map_name: str,
     round_num: int | None = None,
+    height: int = 540,
     asset_dir: Path | str = DEFAULT_MAP_ASSET_DIR,
 ) -> go.Figure | None:
     asset = load_map_asset(map_name, asset_dir)
@@ -148,7 +151,10 @@ def build_radar_figure(
                 customdata=[
                     [
                         int(item[0]["tick"]),
-                        item[0]["place_name"],
+                        localize_place_name(
+                            map_name,
+                            item[0]["place_name"],
+                        ),
                         item[0]["health"],
                     ]
                     for item in transformed
@@ -186,11 +192,13 @@ def build_radar_figure(
         scaleratio=1,
     )
     figure.update_layout(
-        height=620,
+        height=height,
         margin={"l": 10, "r": 10, "t": 30, "b": 10},
         legend={"orientation": "h", "y": 1.02},
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
+        font={"color": "#d7e0e7"},
+        hoverlabel={"bgcolor": "#101a24", "font_color": "#f2f6f9"},
     )
     return figure
 
@@ -251,6 +259,12 @@ def build_economy_figure(
         xaxis_title="回合",
         yaxis_title="队伍装备价值（千）",
         legend={"orientation": "h", "y": 1.08},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font={"color": "#d7e0e7"},
+        xaxis={"gridcolor": "rgba(145,162,178,0.14)"},
+        yaxis={"gridcolor": "rgba(145,162,178,0.14)"},
+        hoverlabel={"bgcolor": "#101a24", "font_color": "#f2f6f9"},
     )
     return figure
 

@@ -45,6 +45,7 @@
 - [公网访问需求](docs/20_public_access_requirement.md)
 - [临时公网演示操作说明](docs/21_public_demo_operations.md)
 - [Streamlit Community Cloud 部署方案](docs/22_streamlit_cloud_deployment.md)
+- [网页视觉重构与地图点位词典](docs/23_ui_and_map_callouts.md)
 
 ## 安装
 

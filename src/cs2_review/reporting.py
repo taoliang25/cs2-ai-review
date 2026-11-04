@@ -7,6 +7,11 @@ from collections import Counter
 from dataclasses import asdict, dataclass
 from typing import Any, Protocol
 
+from cs2_review.map_callouts import (
+    localize_fact_bundle_places,
+    localize_text,
+)
+
 
 @dataclass(frozen=True)
 class ReportDraft:
@@ -208,7 +213,7 @@ def _round_detail_section(
 class TemplateReportProvider:
     """Rule-based fallback that uses only values from the FactBundle."""
 
-    name = "template-v0.2"
+    name = "template-v0.3"
 
     def generate(self, fact_bundle: dict[str, Any]) -> ReportDraft:
         metrics = _metric_map(fact_bundle)
@@ -419,6 +424,11 @@ class TemplateReportProvider:
 
         structured = {
             "provider": self.name,
+            "headline": (
+                f"本场优先改进：{issues[0]}"
+                if issues
+                else "本场没有达到当前规则阈值的明确结构性问题"
+            ),
             "player_profile": {
                 "style": style,
                 "strengths": strengths,
@@ -439,9 +449,17 @@ class TemplateReportProvider:
                 item["evidence_id"] for item in selected_evidence
             ],
         }
+        markdown = localize_text(
+            match["map_name"],
+            "\n".join(lines).strip() + "\n",
+        )
+        structured = localize_fact_bundle_places(
+            structured,
+            match["map_name"],
+        )
         return ReportDraft(
             provider=self.name,
-            markdown="\n".join(lines).strip() + "\n",
+            markdown=markdown,
             structured=structured,
         )
 

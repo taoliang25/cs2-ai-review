@@ -10,6 +10,7 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Any, Protocol
 
+from cs2_review.map_callouts import localize_fact_bundle_places
 from cs2_review.reporting import ReportDraft
 
 REQUIRED_SECTIONS = {
@@ -407,7 +408,7 @@ def build_llm_fact_bundle(
             }
         )
 
-    return {
+    result = {
         "schema_version": "llm-fact-v1",
         "match": {
             "map_name": fact_bundle["match"]["map_name"],
@@ -426,6 +427,10 @@ def build_llm_fact_bundle(
         "allowed_evidence_ids": allowed_ids,
         "analysis_limits": fact_bundle.get("analysis_limits", []),
     }
+    return localize_fact_bundle_places(
+        result,
+        fact_bundle["match"]["map_name"],
+    )
 
 
 def _ensure_complete_timeline(
@@ -604,6 +609,11 @@ def render_llm_markdown(payload: dict[str, Any]) -> str:
     lines = [
         f"# {payload['title']}",
         "",
+        *(
+            [f"> **一句话结论：** {payload['headline']}", ""]
+            if payload.get("headline")
+            else []
+        ),
         "> 本报告的大模型输出受结构化事实包和证据编号约束。"
         "“倾向”属于行为推断，不等于读取玩家真实想法。",
         "",
@@ -682,17 +692,23 @@ class OpenAICompatibleReportProvider:
         system_prompt = (
             "你是《CS2》赛后复盘助手。只能使用用户提供的事实包，"
             "不得补充未出现的比分、回合、事件或心理活动。"
+            "表达采用温和、具体、行动导向的中文教练口吻，避免重复使用"
+            "“系统判断”和空泛评价。"
             "事实类和行为推断类 claim 必须引用 allowed_evidence_ids 中的证据。"
             "建议类内容必须标记为 recommendation。"
             "如果事实包包含 teammate_death_contexts，请优先解释队友阵亡时"
             "玩家所在位置、死亡地点、两者距离、最近存活队友位置、双方人数、"
             "带包和已下包状态。建议要明确指出可向哪个已记录地点靠拢、"
             "应重组还是保持交叉火力，不能编造地形或要求不存在的队友配合。"
+            "事实包中的地点名已经是国内常用叫法，必须原样使用。"
             "整体语气采用温和、具体、行动导向的教练式反馈，指出可尝试的改进，"
             "避免羞辱、绝对化或把赛后信息当成玩家当时已知的信息。"
+            "claim.text 内不要重复粘贴证据编号，证据只放在 evidence_ids 字段。"
+            "百分比统一写成百分数，关键结论先给动作再给解释。"
             "输出严格 JSON，不要输出 Markdown 代码块。"
         )
         schema = {
+            "headline": "一句话指出本场最值得优先改进的方向",
             "title": "string",
             "sections": [
                 {
@@ -709,10 +725,18 @@ class OpenAICompatibleReportProvider:
             ],
         }
         user_prompt = (
-            "请生成六个章节：本场玩家画像、回合时间线、关键决策分析、"
+            "请生成 headline 和六个章节：本场玩家画像、回合时间线、关键决策分析、"
             "单回合复盘、全场总结与训练建议、证据展示。"
+            "headline 要短、具体、可直接行动，不使用夸张评价。"
+            "玩家画像优先列 2-3 个有证据的优势和 2-3 个最值得改进的问题。"
             "时间线必须为事实包中的每一个回合单独写一条 claim，"
-            "不得把多个回合合并成一条。"
+            "不得把多个回合合并成一条；每回合只写结果、个人 K/D/A、"
+            "首轮交火和关键路线。"
+            "关键决策分析优先使用“发生了什么—影响—可以尝试”的因果顺序。"
+            "单回合复盘必须说明队友阵亡时玩家所在的地点、最近存活队友所在地点，"
+            "以及下一动作应该去哪个已记录地点或保持什么站位。"
+            "全场总结只保留最重要的三个问题和可执行的训练动作。"
+            "证据展示按证据编号分组概括，不逐条复述事实。"
             "描述范围只能使用“本场”，不得写成“本赛季”或扩展到历史比赛。"
             "每条事实或行为推断都要附证据 ID；没有证据时明确写证据不足。"
             "措辞使用“系统判断”或“行为倾向”，不得声称读取心理。"

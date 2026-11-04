@@ -56,7 +56,7 @@ class StreamlitAppTest(unittest.TestCase):
 
             analyze_button = next(
                 button for button in app.button
-                if "生成本场画像" in button.label
+                if "生成 AI 画像" in button.label
             )
             analyze_button.click().run(timeout=60)
             self.assertEqual(len(app.exception), 0)
