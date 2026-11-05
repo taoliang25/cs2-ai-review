@@ -94,6 +94,10 @@
 
 ## 4. 当前公网部署
 
+> 2026-11-06 新约束：用户实测 `*.streamlit.app` 必须开启 VPN，不能作为最终
+> 答辩地址。正在迁移到中国大陆普通网络可直接访问的国内平台。迁移完成前，
+> 现有 Streamlit Cloud 地址仅作为临时备份。
+
 - GitHub 仓库：
   <https://github.com/taoliang25/cs2-ai-review>
 - 仓库可见性：Public。用户已明确同意公开源代码。
