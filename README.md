@@ -50,6 +50,7 @@
 - [临时公网演示操作说明](docs/21_public_demo_operations.md)
 - [Streamlit Community Cloud 部署方案](docs/22_streamlit_cloud_deployment.md)
 - [网页视觉重构与地图点位词典](docs/23_ui_and_map_callouts.md)
+- [系统演示与答辩材料包](docs/24_demo_and_defense_pack.md)
 
 ## 安装
 
